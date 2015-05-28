@@ -1,0 +1,10 @@
+<script type="text/javascript">
+var res_data = {"content": "<td class=\"df\"></td><td class=\"name\">Nguyễn Đình Dũng</td><td class=\"phone\">+84933459044</td><td class=\"address\">Libušská 319/126</td><td class=\"city\">Prague</td><td class=\"state\">Prague</td><td class=\"zipcode\">142 00</td><td class=\"btns\"><button onclick=\"c_edit(1)\">Edit</button> <button onclick=\"c_delete(1)\">Delete</button></td>"
+};
+jQuery(function($)
+{
+	show_ntf('Địa chỉ của bạn đã được cập nhật');
+	$('#address-1').html(res_data.content);
+	$('#edit_address-1').remove()
+});
+</script>

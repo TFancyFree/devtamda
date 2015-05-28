@@ -1,0 +1,11 @@
+{
+"id": 1212,
+  "incart": 1,
+  "min":10,
+"max":100,
+	"step":10,
+  "price": "34544",
+  "cartCount" : 3,
+  "total": "1000",
+  "html":"<li class=\"product_1212\"><div class=\"inner\"><div class=\"thumb\"><a href=\"product.html\" title=\"\"><img src=\"http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg\" alt=\"\"></a><div class=\"badge new\">New</div></div><div class=\"info\"><h3 class=\"title\"><a href=\"product.html\" title=\"Tiêu đề\">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3><div class=\"desc\"><div class=\"add2cart update-cart\"><form class=\"add2cart-form updatecart-form\" action=\"demo/ajax_add2cart.json\" method=\"post\"><span class=\"qty\"><button type=\"button\">-</button><input autocomplete=\"off\" data-max-amount=\"1200\" data-min-amount=\"10\" type=\"text\" name=\"quantity-update\" value=\"30\" data-step-amount=\"10\" data-incart=\"30\" data-price=\"15.9\" /><button type=\"button\">+</button></span><input type=\"hidden\" name=\"product-id\" value=\"12\"/><input type=\"hidden\" name=\"action\" value=\"update\"/><button class=\"button button-save-cart\" type=\"submit\">Lưu</button></form><div class=\"price\">&times; <span class=\"n\">30 Kč</span></div><div class=\"price_tt\"><span class=\"n\">30</span> Kč</div></div></div></div><div class=\"badge discount\">20%</div><a href=\"demo/fav.html\" class=\"badge fav ajax\">&hearts;</a><a href=\"demo/remove.json?id=12\" class=\"remove ajax\">&times;</a><div class=\"clear\"></div></div></li>"	
+}

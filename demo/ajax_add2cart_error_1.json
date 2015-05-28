@@ -1,0 +1,8 @@
+{
+	"error":1,
+	"msg":"Bạn chỉ được chọn số lượng tối đa là 20",
+	"id": 1212,
+	"min":10,
+	"max":100,
+	"step":10
+}

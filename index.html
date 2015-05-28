@@ -1,0 +1,1384 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700,800&amp;subset=latin-ext' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="js/perfect-scrollbar.jquery.min.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/cart.js"></script>
+</head>
+<body class="home">
+<!--
+body class:
+	home
+	product-list
+	product
+	checkout
+    
+!-->
+<div id="global">
+<!-- HEADER -->	
+<div id="header">
+	<div class="wrap">
+		<div id="logo">
+			<h1><a href="index.html" title=""><img src="images/logo.png" title="" alt="" /></a></h1>
+		</div>
+		<div id="cart" class="prdincart">
+			<div class="header">
+				<h6>Cart<span>17</span></h6>
+				<p><b>$26,250.00</b>
+				<a href="index.php?route=checkout/cart" class="button">Order</a>
+				</p>
+			</div>
+			<div class="cart-dt">
+				<div class="items">
+					<ul>
+						<li>
+							<div class="thumb"><a href="#" title=""><img alt="" src="http://dev.tamda.eu/image/cache/catalog/demo/ipod_shuffle_3-47x47.jpg"></a></div>
+							<div class="info">
+								<h3><a href="#"></a></h3>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="footer">
+					<div class="sum">
+						<p class="delivery"><i></i> <strong>$94,076.80</strong></p>
+						<p class="total"><span>Total</span> <strong>$94,076.80</strong></p>
+					</div>
+					<a href="checkout.html" class="button">Order</a>		
+					<div class="tips deliveryUpsell">
+						Get 100 CZK for purchase and free shipping
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="right">
+			
+			<div class="nav-fav">
+				<a href="fav.html">
+				<span class="icon"></span><span class="label">Yêu
+thích</span></a>
+			</div>
+			<div class="nav-user" id="user-area">
+				<div class="icon"></div>
+				<div class="label">
+				<a href="login.html">Đăng nhập</a>
+				<a href="register.html">Đăng ký</a>
+				</div>
+				<div id="user-menu" class="box">
+					<form action="/index.php?route=account/login" method="post"  id="frm-loginForm">
+						<p>Welcome to Tamda</p>
+						<p><a href="/?do=facebookLogin&amp;backlink=6zhyo" class="fb" rel="nofollow">Přihlásit přes facebook</a></p>
+						<p><label for="frm-loginForm-email"><input type="email" name="email" placeholder="Váš e-mail" title="Váš e-mail" id="frm-loginForm-email" class="user"></label></p>
+						<p><label for="frm-loginForm-password"><input type="password" name="password" placeholder="Heslo" title="Heslo" id="frm-loginForm-password" class="password"></label></p>
+		
+						<p class="form-bottom"><a href="#">Zapomenuté heslo?</a><button type="submit" class="button">Přihlásit se</button></p>
+						<div class="div"></div>
+				<p>New Customer?</p>
+				<p class="button-link">
+					<a href="login.html" class="button">Đăng ký</a>
+				</p>
+           			 </form>
+					 
+					 <ul class="nav">
+						<li><a rel="nofollow" href="profile.html">My AliExpress</a></li>
+						<li><a rel="nofollow" href="orders.html" data-spm-anchor-id="2114.11010108.0.22">My Orders</a></li>
+						<li><a rel="nofollow" href="fav.html">Wish List</a></li>
+						<li><a rel="nofollow" href="profile.html">My Coupons</a></li>
+						<li><a href="profile.html">My Points</a></li>
+					<li><a href="profile.html" rel="nofollow">My Alipay</a></li></ul>
+				</div>
+			</div>
+		</div>
+		<div id="search">
+			<form action="search.html">
+				<div class="search_input">
+					<input type="text" value="" name="q" placeholder="Tên hàng hoặc 5 số cuối mã vạch" id="search-value" />
+					<button type="submit"></button>
+                </div>
+            </form>
+            <div id="search-result">
+                <div class="search-rsct">
+					<div class="category">
+						<div class="category">
+							<h3><a href="#">Bánh mì</a></h3>
+							<ul class="subcat">
+								<li><a href="121212">Tên subcat</a></li>
+								<li><a href="121212">Tên subcat</a></li>
+								<li><a href="121212">Tên subcat</a></li>
+								<li><a href="121212">Tên subcat</a></li>
+								<li><a href="121212">Tên subcat</a></li>
+								<li><a href="121212">Tên subcat</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="clear div"></div>
+                    <ul class="products products_s">
+                        <li class="product_12">
+                            <div class="thumb">
+                                <a href="product.html" title="Tiêu đề">
+                                <img src="http://dev.tamda.eu/image/cache/catalog/demo/7020426_7-228x228.jpg" class="grocery-image-placeholder" data-replace="http://dev.tamda.eu/image/cache/catalog/demo/7020426_7-228x228.jpg" alt="Adidas Deo 150ml Men Champions League">
+                                </a>
+                            </div>
+                            <div class="info">
+                                <h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+                                <dl>
+                                    <dt>EAN:</dt>
+                                    <dd>3607343587631</dd>
+                                </dl>
+                                <dl>
+                                    <dt>KS/KRT:</dt>
+                                    <dd>12</dd>
+                                </dl>
+                                <dl class="price">
+                                    <dt>Giá:</dt>
+                                    <dd><strong>$15.90</strong> <del>$17.90</del></dd>
+                                </dl>
+                            </div>
+                            <div class="add2cart">
+                                <form class="add2cart-form" action="check-out.html" method="post">
+                                <span class="qty">
+                                    <button type="button">-</button>
+                                    <input autocomplete="off" data-max-amount="1200" data-min-amount="100" type="text" name="quantity" value="100" data-step-amount="12" />
+                                    <button type="button">+</button>
+                                </span>
+								<input type="hidden" name="product-id" value="12"/>
+                                <button class="button button-cart" type="submit">Add to cart</button>
+                                </form>
+                            </div>
+                        </li>
+						<li class="product_12">
+                            <div class="thumb">
+                                <a href="product.html" title="Tiêu đề">
+                                <img src="http://dev.tamda.eu/image/cache/catalog/demo/7020426_7-228x228.jpg" class="grocery-image-placeholder" data-replace="http://dev.tamda.eu/image/cache/catalog/demo/7020426_7-228x228.jpg" alt="Adidas Deo 150ml Men Champions League">
+                                </a>
+                            </div>
+                            <div class="info">
+                                <h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+                                <dl>
+                                    <dt>EAN:</dt>
+                                    <dd>3607343587631</dd>
+                                </dl>
+                                <dl>
+                                    <dt>KS/KRT:</dt>
+                                    <dd>12</dd>
+                                </dl>
+                                <dl class="price">
+                                    <dt>Giá:</dt>
+                                    <dd><strong>$15.90</strong> <del>$17.90</del></dd>
+                                </dl>
+                            </div>
+                            <div class="add2cart">
+                                <form class="add2cart-form" action="check-out.html" method="post">
+                                <span class="qty">
+                                    <button type="button">-</button>
+                                    <input autocomplete="off" data-max-amount="1200" data-min-amount="100" type="text" name="quantity" value="100" data-step-amount="12" />
+                                    <button type="button">+</button>
+                                </span>
+								<input type="hidden" name="product-id" value="12"/>
+                                <button class="button button-cart" type="submit">Add to cart</button>
+                                </form>
+                            </div>
+                        </li>
+						<li class="product_12">
+                            <div class="thumb">
+                                <a href="product.html" title="Tiêu đề">
+                                <img src="http://dev.tamda.eu/image/cache/catalog/demo/7020426_7-228x228.jpg" class="grocery-image-placeholder" data-replace="http://dev.tamda.eu/image/cache/catalog/demo/7020426_7-228x228.jpg" alt="Adidas Deo 150ml Men Champions League">
+                                </a>
+                            </div>
+                            <div class="info">
+                                <h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+                                <dl>
+                                    <dt>EAN:</dt>
+                                    <dd>3607343587631</dd>
+                                </dl>
+                                <dl>
+                                    <dt>KS/KRT:</dt>
+                                    <dd>12</dd>
+                                </dl>
+                                <dl class="price">
+                                    <dt>Giá:</dt>
+                                    <dd><strong>$15.90</strong> <del>$17.90</del></dd>
+                                </dl>
+                            </div>
+                            <div class="add2cart">
+                                <form class="add2cart-form" action="check-out.html" method="post">
+                                <span class="qty">
+                                    <button type="button">-</button>
+                                    <input autocomplete="off" data-max-amount="1200" data-min-amount="100" type="text" name="quantity" value="100" data-step-amount="12" />
+                                    <button type="button">+</button>
+                                </span>
+								<input type="hidden" name="product-id" value="12"/>
+                                <button class="button button-cart" type="submit">Add to cart</button>
+                                </form>
+                            </div>
+                        </li>
+						<li class="product_12">
+                            <div class="thumb">
+                                <a href="product.html" title="Tiêu đề">
+                                <img src="http://dev.tamda.eu/image/cache/catalog/demo/7020426_7-228x228.jpg" class="grocery-image-placeholder" data-replace="http://dev.tamda.eu/image/cache/catalog/demo/7020426_7-228x228.jpg" alt="Adidas Deo 150ml Men Champions League">
+                                </a>
+                            </div>
+                            <div class="info">
+                                <h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+                                <dl>
+                                    <dt>EAN:</dt>
+                                    <dd>3607343587631</dd>
+                                </dl>
+                                <dl>
+                                    <dt>KS/KRT:</dt>
+                                    <dd>12</dd>
+                                </dl>
+                                <dl class="price">
+                                    <dt>Giá:</dt>
+                                    <dd><strong>$15.90</strong> <del>$17.90</del></dd>
+                                </dl>
+                            </div>
+                            <div class="add2cart">
+                                <form class="add2cart-form" action="check-out.html" method="post">
+                                <span class="qty">
+                                    <button type="button">-</button>
+                                    <input autocomplete="off" data-max-amount="1200" data-min-amount="100" type="text" name="quantity" value="100" data-step-amount="12" />
+                                    <button type="button">+</button>
+                                </span>
+								<input type="hidden" name="product-id" value="12"/>
+                                <button class="button button-cart" type="submit">Add to cart</button>
+                                </form>
+                            </div>
+                        </li>
+						<li class="product_12">
+                            <div class="thumb">
+                                <a href="product.html" title="Tiêu đề">
+                                <img src="http://dev.tamda.eu/image/cache/catalog/demo/7020426_7-228x228.jpg" class="grocery-image-placeholder" data-replace="http://dev.tamda.eu/image/cache/catalog/demo/7020426_7-228x228.jpg" alt="Adidas Deo 150ml Men Champions League">
+                                </a>
+                            </div>
+                            <div class="info">
+                                <h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+                                <dl>
+                                    <dt>EAN:</dt>
+                                    <dd>3607343587631</dd>
+                                </dl>
+                                <dl>
+                                    <dt>KS/KRT:</dt>
+                                    <dd>12</dd>
+                                </dl>
+                                <dl class="price">
+                                    <dt>Giá:</dt>
+                                    <dd><strong>$15.90</strong> <del>$17.90</del></dd>
+                                </dl>
+                            </div>
+                            <div class="add2cart">
+                                <form class="add2cart-form" action="check-out.html" method="post">
+                                <span class="qty">
+                                    <button type="button">-</button>
+                                    <input autocomplete="off" data-max-amount="1200" data-min-amount="100" type="text" name="quantity" value="100" data-step-amount="12" />
+                                    <button type="button">+</button>
+                                </span>
+								<input type="hidden" name="product-id" value="12"/>
+                                <button class="button button-cart" type="submit">Add to cart</button>
+                                </form>
+                            </div>
+                        </li>
+						<li class="product_12">
+                            <div class="thumb">
+                                <a href="product.html" title="Tiêu đề">
+                                <img src="http://dev.tamda.eu/image/cache/catalog/demo/7020426_7-228x228.jpg" class="grocery-image-placeholder" data-replace="http://dev.tamda.eu/image/cache/catalog/demo/7020426_7-228x228.jpg" alt="Adidas Deo 150ml Men Champions League">
+                                </a>
+                            </div>
+                            <div class="info">
+                                <h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+                                <dl>
+                                    <dt>EAN:</dt>
+                                    <dd>3607343587631</dd>
+                                </dl>
+                                <dl>
+                                    <dt>KS/KRT:</dt>
+                                    <dd>12</dd>
+                                </dl>
+                                <dl class="price">
+                                    <dt>Giá:</dt>
+                                    <dd><strong>$15.90</strong> <del>$17.90</del></dd>
+                                </dl>
+                            </div>
+                            <div class="add2cart">
+                                <form class="add2cart-form" action="check-out.html" method="post">
+                                <span class="qty">
+                                    <button type="button">-</button>
+                                    <input autocomplete="off" data-max-amount="1200" data-min-amount="100" type="text" name="quantity" value="100" data-step-amount="12" />
+                                    <button type="button">+</button>
+                                </span>
+								<input type="hidden" name="product-id" value="12"/>
+                                <button class="button button-cart" type="submit">Add to cart</button>
+                                </form>
+                            </div>
+                        </li>
+						<li class="product_12">
+                            <div class="thumb">
+                                <a href="product.html" title="Tiêu đề">
+                                <img src="http://dev.tamda.eu/image/cache/catalog/demo/7020426_7-228x228.jpg" class="grocery-image-placeholder" data-replace="http://dev.tamda.eu/image/cache/catalog/demo/7020426_7-228x228.jpg" alt="Adidas Deo 150ml Men Champions League">
+                                </a>
+                            </div>
+                            <div class="info">
+                                <h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+                                <dl>
+                                    <dt>EAN:</dt>
+                                    <dd>3607343587631</dd>
+                                </dl>
+                                <dl>
+                                    <dt>KS/KRT:</dt>
+                                    <dd>12</dd>
+                                </dl>
+                                <dl class="price">
+                                    <dt>Giá:</dt>
+                                    <dd><strong>$15.90</strong> <del>$17.90</del></dd>
+                                </dl>
+                            </div>
+                            <div class="add2cart">
+                                <form class="add2cart-form" action="check-out.html" method="post">
+                                <span class="qty">
+                                    <button type="button">-</button>
+                                    <input autocomplete="off" data-max-amount="1200" data-min-amount="100" type="text" name="quantity" value="100" data-step-amount="12" />
+                                    <button type="button">+</button>
+                                </span>
+								<input type="hidden" name="product-id" value="12"/>
+                                <button class="button button-cart" type="submit">Add to cart</button>
+                                </form>
+                            </div>
+                        </li>
+						<li class="product_12">
+                            <div class="thumb">
+                                <a href="product.html" title="Tiêu đề">
+                                <img src="http://dev.tamda.eu/image/cache/catalog/demo/7020426_7-228x228.jpg" class="grocery-image-placeholder" data-replace="http://dev.tamda.eu/image/cache/catalog/demo/7020426_7-228x228.jpg" alt="Adidas Deo 150ml Men Champions League">
+                                </a>
+                            </div>
+                            <div class="info">
+                                <h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+                                <dl>
+                                    <dt>EAN:</dt>
+                                    <dd>3607343587631</dd>
+                                </dl>
+                                <dl>
+                                    <dt>KS/KRT:</dt>
+                                    <dd>12</dd>
+                                </dl>
+                                <dl class="price">
+                                    <dt>Giá:</dt>
+                                    <dd><strong>$15.90</strong> <del>$17.90</del></dd>
+                                </dl>
+                            </div>
+                            <div class="add2cart">
+                                <form class="add2cart-form" action="check-out.html" method="post">
+                                <span class="qty">
+                                    <button type="button">-</button>
+                                    <input autocomplete="off" data-max-amount="1200" data-min-amount="100" type="text" name="quantity" value="100" data-step-amount="12" />
+                                    <button type="button">+</button>
+                                </span>
+								<input type="hidden" name="product-id" value="12"/>
+                                <button class="button button-cart" type="submit">Add to cart</button>
+                                </form>
+                            </div>
+                        </li>
+						<li class="product_12">
+                            <div class="thumb">
+                                <a href="product.html" title="Tiêu đề">
+                                <img src="http://dev.tamda.eu/image/cache/catalog/demo/7020426_7-228x228.jpg" class="grocery-image-placeholder" data-replace="http://dev.tamda.eu/image/cache/catalog/demo/7020426_7-228x228.jpg" alt="Adidas Deo 150ml Men Champions League">
+                                </a>
+                            </div>
+                            <div class="info">
+                                <h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+                                <dl>
+                                    <dt>EAN:</dt>
+                                    <dd>3607343587631</dd>
+                                </dl>
+                                <dl>
+                                    <dt>KS/KRT:</dt>
+                                    <dd>12</dd>
+                                </dl>
+                                <dl class="price">
+                                    <dt>Giá:</dt>
+                                    <dd><strong>$15.90</strong> <del>$17.90</del></dd>
+                                </dl>
+                            </div>
+                            <div class="add2cart">
+                                <form class="add2cart-form" action="check-out.html" method="post">
+                                <span class="qty">
+                                    <button type="button">-</button>
+                                    <input autocomplete="off" data-max-amount="1200" data-min-amount="100" type="text" name="quantity" value="100" data-step-amount="12" />
+                                    <button type="button">+</button>
+                                </span>
+								<input type="hidden" name="product-id" value="12"/>
+                                <button class="button button-cart" type="submit">Add to cart</button>
+                                </form>
+                            </div>
+                        </li>
+						<li class="product_12">
+                            <div class="thumb">
+                                <a href="product.html" title="Tiêu đề">
+                                <img src="http://dev.tamda.eu/image/cache/catalog/demo/7020426_7-228x228.jpg" class="grocery-image-placeholder" data-replace="http://dev.tamda.eu/image/cache/catalog/demo/7020426_7-228x228.jpg" alt="Adidas Deo 150ml Men Champions League">
+                                </a>
+                            </div>
+                            <div class="info">
+                                <h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+                                <dl>
+                                    <dt>EAN:</dt>
+                                    <dd>3607343587631</dd>
+                                </dl>
+                                <dl>
+                                    <dt>KS/KRT:</dt>
+                                    <dd>12</dd>
+                                </dl>
+                                <dl class="price">
+                                    <dt>Giá:</dt>
+                                    <dd><strong>$15.90</strong> <del>$17.90</del></dd>
+                                </dl>
+                            </div>
+                            <div class="add2cart">
+                                <form class="add2cart-form" action="check-out.html" method="post">
+                                <span class="qty">
+                                    <button type="button">-</button>
+                                    <input autocomplete="off" data-max-amount="1200" data-min-amount="100" type="text" name="quantity" value="100" data-step-amount="12" />
+                                    <button type="button">+</button>
+                                </span>
+								<input type="hidden" name="product-id" value="12"/>
+                                <button class="button button-cart" type="submit">Add to cart</button>
+                                </form>
+                            </div>
+                        </li>
+						<li class="product_12">
+                            <div class="thumb">
+                                <a href="product.html" title="Tiêu đề">
+                                <img src="http://dev.tamda.eu/image/cache/catalog/demo/7020426_7-228x228.jpg" class="grocery-image-placeholder" data-replace="http://dev.tamda.eu/image/cache/catalog/demo/7020426_7-228x228.jpg" alt="Adidas Deo 150ml Men Champions League">
+                                </a>
+                            </div>
+                            <div class="info">
+                                <h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+                                <dl>
+                                    <dt>EAN:</dt>
+                                    <dd>3607343587631</dd>
+                                </dl>
+                                <dl>
+                                    <dt>KS/KRT:</dt>
+                                    <dd>12</dd>
+                                </dl>
+                                <dl class="price">
+                                    <dt>Giá:</dt>
+                                    <dd><strong>$15.90</strong> <del>$17.90</del></dd>
+                                </dl>
+                            </div>
+                            <div class="add2cart">
+                                <form class="add2cart-form" action="check-out.html" method="post">
+                                <span class="qty">
+                                    <button type="button">-</button>
+                                    <input autocomplete="off" data-max-amount="1200" data-min-amount="100" type="text" name="quantity" value="100" data-step-amount="12" />
+                                    <button type="button">+</button>
+                                </span>
+								<input type="hidden" name="product-id" value="12"/>
+                                <button class="button button-cart" type="submit">Add to cart</button>
+                                </form>
+                            </div>
+                        </li>
+						<li class="product_12">
+                            <div class="thumb">
+                                <a href="product.html" title="Tiêu đề">
+                                <img src="http://dev.tamda.eu/image/cache/catalog/demo/7020426_7-228x228.jpg" class="grocery-image-placeholder" data-replace="http://dev.tamda.eu/image/cache/catalog/demo/7020426_7-228x228.jpg" alt="Adidas Deo 150ml Men Champions League">
+                                </a>
+                            </div>
+                            <div class="info">
+                                <h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+                                <dl>
+                                    <dt>EAN:</dt>
+                                    <dd>3607343587631</dd>
+                                </dl>
+                                <dl>
+                                    <dt>KS/KRT:</dt>
+                                    <dd>12</dd>
+                                </dl>
+                                <dl class="price">
+                                    <dt>Giá:</dt>
+                                    <dd><strong>$15.90</strong> <del>$17.90</del></dd>
+                                </dl>
+                            </div>
+                            <div class="add2cart">
+                                <form class="add2cart-form" action="check-out.html" method="post">
+                                <span class="qty">
+                                    <button type="button">-</button>
+                                    <input autocomplete="off" data-max-amount="1200" data-min-amount="100" type="text" name="quantity" value="100" data-step-amount="12" />
+                                    <button type="button">+</button>
+                                </span>
+								<input type="hidden" name="product-id" value="12"/>
+                                <button class="button button-cart" type="submit">Add to cart</button>
+                                </form>
+                            </div>
+                        </li>
+                    </ul>
+					<div class="clear"></div>
+					<div class="footer">
+						<p class="stat">50 kết quả</p>
+						<p class="pages">
+							<a href="#" onClick="do_search('keyword','page_numb')">1</a>
+							<a href="#" class="current" onClick="do_search('keyword','page_numb')">2</a>
+							<a href="#" onClick="do_search('keyword','page_numb')">3</a>
+							<a href="#" onClick="do_search('keyword','page_numb')">4</a>
+						</p>
+					</div>
+</div>
+            </div>
+        </div>
+		
+		
+			
+    </div>
+</div>
+
+<div id="menu">
+	<div class="wrap">
+		<ul>
+			<li><a href="#" title=""><span class="disc">Akce</span></a></li>
+			<li class="active"><a href="#">Drogerie</a>
+				<ul>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li class="active"><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Drogerie</a>
+				<ul>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Drogerie</a>
+				<ul>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Drogerie</a>
+				<ul>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Drogerie</a>
+				<ul>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Drogerie</a>
+				<ul>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Drogerie</a>
+				<ul>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Drogerie</a>
+				<ul>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Drogerie</a>
+				<ul>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Drogerie</a>
+				<ul>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+					<li><a href="#" title="">Chăm sóc tóc</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>
+<!-- /HEADER -->
+<div id="breadcrumb" class="aside">
+	<div class="wrap">
+		<div class="br-ct">
+			<p>TamdaExpress - <b>new store</b></p>
+			<!--<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+				<a href="http://www.example.com/books" itemprop="url"><span itemprop="title">Books</span></a> ›
+				<div class="child" itemprop="child" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+					<a href="http://www.example.com/books/authors" itemprop="url"><span itemprop="title">Authors</span></a> ›
+					<div class="child" itemprop="child" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+						<a href="http://www.example.com/books/authors/stephenking" itemprop="url"><span itemprop="title">Stephen King</span></a>
+					</div>
+				</div>
+			</div>-->
+		</div>
+	</div>
+</div>
+
+<!-- BODY -->
+<div id="body">
+	<div class="wrap">
+		<script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
+		<script type="text/javascript">
+		jQuery(function($){
+			slide_setting = {
+				'randomStart':true,
+				'pager':false,
+				'auto':true,
+				'pause':5000,
+				'autoHover':true
+			};
+			$('#slide-cat-1').bxSlider(slide_setting);
+			$('#slide-cat-2').bxSlider(slide_setting);
+			$('#slide-cat-3').bxSlider(slide_setting);
+			top_slider = $('#slide-top').bxSlider(
+				{
+					'randomStart':true,
+				'auto':true,
+				'pause':5000,
+				'autoHover':true,
+					onSlideAfter:function(){
+						var current = top_slider.getCurrentSlide()+1;
+						$('section.slider .links li').removeClass('current');
+						$('section.slider .links li.slide_'+current).addClass('current');
+					},
+				}
+			);
+			$('section.slider .links li').removeClass('current');
+			$('section.slider .links li a').click(function(e){e.preventDefault();});
+			var current = top_slider.getCurrentSlide()+1;
+			$('section.slider .links li.slide_'+current).addClass('current');
+			$('section.cat-gr .links').each(function(index, element) {
+				var a = $(this);
+				a.children('ul.subcat').css('top',a.children('div.header').outerHeight()).perfectScrollbar();
+			});
+			//$('section.cat-gr .links .subcat').perfectScrollbar();
+		});
+		</script>
+		<section class="slider">
+			<div class="links">
+				<div class="header"><h3>Thông tin nhanh</h3> <a href="#" title=""><i>Xem thêm &rsaquo;</i></a></div>
+				<ul class="items">
+					<li class="slide_1"><a href="#" onClick="top_slider.goToSlide(0);">Link</a></li>
+					<li class="slide_2"><a href="#" onClick="top_slider.goToSlide(1);">Link</a></li>
+					<li class="slide_3"><a href="#" onClick="top_slider.goToSlide(2);">Link</a></li>
+					<li class="slide_4"><a href="#" onClick="top_slider.goToSlide(3);">Link</a></li>
+					<li class="slide_5"><a href="#" onClick="top_slider.goToSlide(4);">Link</a></li>
+				</ul>
+			</div>
+			<div class="right">
+				<div class="row table">
+					<div class="slide-ct col">
+						<ul id="slide-top">
+							<li>
+								<a href="#" style="background-image:url('http://atms01.alicdn.com/tps/i2/TB1xZIvHFXXXXcHXpXXVpvE2pXX-750-400.jpg')" title="">Tiêu đề</a>
+							</li>
+							<li>
+								<a href="#" style="background-image:url('http://atms01.alicdn.com/tps/i2/TB1xZIvHFXXXXcHXpXXVpvE2pXX-750-400.jpg')" title="">Tiêu đề</a>
+							</li>
+							<li>
+								<a href="#" style="background-image:url('http://atms01.alicdn.com/tps/i2/TB1xZIvHFXXXXcHXpXXVpvE2pXX-750-400.jpg')" title="">Tiêu đề</a>
+							</li>
+							<li>
+								<a href="#" style="background-image:url('http://atms01.alicdn.com/tps/i2/TB1xZIvHFXXXXcHXpXXVpvE2pXX-750-400.jpg')" title="">Tiêu đề</a>
+							</li>
+							<li>
+								<a href="#" style="background-image:url('http://atms01.alicdn.com/tps/i2/TB1xZIvHFXXXXcHXpXXVpvE2pXX-750-400.jpg')" title="">Tiêu đề</a>
+							</li>
+						</ul>
+					</div>
+					<div class="more col">
+						<ul>
+							<li><a href="#"><img src="http://atms02.alicdn.com/tps/i3/TB1KKl6HFXXXXakaXXXOlbtZVXX-320-200.jpg" class="product-pic" alt="" width="320" height="200"></a></li>
+							<li><a href="#"><img src="http://atms02.alicdn.com/tps/i4/TB1vAQhHpXXXXcEXVXXOlbtZVXX-320-200.jpg" class="product-pic" alt="" width="320" height="200"></a></li>
+							</ul>
+					</div>
+				</div>	
+			</div>
+			<div class="clear"></div>
+		</section>
+		<section class="cat-gr">
+			<div class="row table">
+				<div class="col links">
+					<div class="header">
+						<h2><a href="category.html">Category</a></h2>
+					</div>
+					<ul class="subcat">
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					</ul>
+				</div>
+				<div class="col slide-ct">
+					<a href="#" title="" class="banner"><img src="http://atms01.alicdn.com/tps/i1/TB1MiWwHFXXXXagXpXXL2TJPFXX-480-550.jpg" alt=""></a>
+				</div>
+				<div class="col">
+					<ul class="products">
+						<li class="n_1">
+							<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+							<div class="badge discount">20%</div>
+							<div class="badge new">New</div>
+							<div class="badge fav">Favorite</div>
+							</div>
+							<div class="info">
+								<h3 class="title"><a href="product.html" title="">Tên sản phẩm Tên sản phẩm Tên sản phẩm Tên sản phẩm</a></h3>
+                                <dl class="price">
+                                    <dt>Giá:</dt>
+                                    <dd><strong>$15.90</strong> <del>$17.90</del></dd>
+                                </dl>
+							</div>
+							
+						</li>
+						<li class="n_2">
+							<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+							<div class="badge discount">20%</div>
+							<div class="badge new">New</div>
+							<div class="badge fav">Favorite</div>
+							</div>
+							<div class="info">
+								<h3 class="title"><a href="product.html" title="">Tên sản phẩm Tên sản phẩm Tên sản phẩm Tên sản phẩm</a></h3>
+                                <dl class="price">
+                                    <dt>Giá:</dt>
+                                    <dd><strong>$15.90</strong> <del>$17.90</del></dd>
+                                </dl>
+							</div>
+							
+						</li>
+						<li class="n_3">
+							<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+							<div class="badge discount">20%</div>
+							<div class="badge new">New</div>
+							<div class="badge fav">Favorite</div>
+							</div>
+							<div class="info">
+								<h3 class="title"><a href="product.html" title="">Tên sản phẩm Tên sản phẩm Tên sản phẩm Tên sản phẩm</a></h3>
+                                <dl class="price">
+                                    <dt>Giá:</dt>
+                                    <dd><strong>$15.90</strong> <del>$17.90</del></dd>
+                                </dl>
+							</div>
+							
+						</li>
+						<li class="n_4">
+							<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+							<div class="badge discount">20%</div>
+							<div class="badge new">New</div>
+							<div class="badge fav">Favorite</div>
+							</div>
+							<div class="info">
+								<h3 class="title"><a href="product.html" title="">Tên sản phẩm Tên sản phẩm Tên sản phẩm Tên sản phẩm</a></h3>
+                                <dl class="price">
+                                    <dt>Giá:</dt>
+                                    <dd><strong>$15.90</strong> <del>$17.90</del></dd>
+                                </dl>
+							</div>
+							
+						</li>
+						<li class="n_5">
+							<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+							<div class="badge discount">20%</div>
+							<div class="badge new">New</div>
+							<div class="badge fav">Favorite</div>
+							</div>
+							<div class="info">
+								<h3 class="title"><a href="product.html" title="">Tên sản phẩm Tên sản phẩm Tên sản phẩm Tên sản phẩm</a></h3>
+                                <dl class="price">
+                                    <dt>Giá:</dt>
+                                    <dd><strong>$15.90</strong> <del>$17.90</del></dd>
+                                </dl>
+							</div>
+							
+						</li>
+						<li class="n_6">
+							<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+							<div class="badge discount">20%</div>
+							<div class="badge new">New</div>
+							<div class="badge fav">Favorite</div>
+							</div>
+							<div class="info">
+								<h3 class="title"><a href="product.html" title="">Tên sản phẩm Tên sản phẩm Tên sản phẩm Tên sản phẩm</a></h3>
+                                <dl class="price">
+                                    <dt>Giá:</dt>
+                                    <dd><strong>$15.90</strong> <del>$17.90</del></dd>
+                                </dl>
+							</div>
+							
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section class="cat-gr">
+			<div class="row table">
+				<div class="col links">
+					<div class="header">
+						<h2><a href="category.html">Category</a></h2>
+					</div>
+					<ul class="subcat">
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					</ul>
+				</div>
+				<div class="col slide-ct">
+					<ul id="slide-cat-2">
+						<li>
+							<a href="#" title=""><img src="http://atms01.alicdn.com/tps/i1/TB1MiWwHFXXXXagXpXXL2TJPFXX-480-550.jpg" alt=""></a>
+						</li>
+						<li>
+							<a href="#" title=""><img src="http://atms01.alicdn.com/tps/i1/TB1MiWwHFXXXXagXpXXL2TJPFXX-480-550.jpg" alt=""></a>
+						</li>
+						<li>
+							<a href="#" title=""><img src="http://atms01.alicdn.com/tps/i1/TB1MiWwHFXXXXagXpXXL2TJPFXX-480-550.jpg" alt=""></a>
+						</li>
+						<li>
+							<a href="#" title=""><img src="http://atms01.alicdn.com/tps/i1/TB1MiWwHFXXXXagXpXXL2TJPFXX-480-550.jpg" alt=""></a>
+						</li>
+						<li>
+							<a href="#" title=""><img src="http://atms01.alicdn.com/tps/i1/TB1MiWwHFXXXXagXpXXL2TJPFXX-480-550.jpg" alt=""></a>
+						</li>
+					</ul>
+				</div>
+				<div class="col">
+					<ul class="products">
+						<li class="n_1">
+							<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+							<div class="badge discount">20%</div>
+							<div class="badge new">New</div>
+							<div class="badge fav">Favorite</div>
+							</div>
+							<div class="info">
+								<h3 class="title"><a href="product.html" title="">Tên sản phẩm Tên sản phẩm Tên sản phẩm Tên sản phẩm</a></h3>
+                                <dl class="price">
+                                    <dt>Giá:</dt>
+                                    <dd><strong>$15.90</strong> <del>$17.90</del></dd>
+                                </dl>
+							</div>
+							
+						</li>
+						<li class="n_2">
+							<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+							<div class="badge discount">20%</div>
+							<div class="badge new">New</div>
+							<div class="badge fav">Favorite</div>
+							</div>
+							<div class="info">
+								<h3 class="title"><a href="product.html" title="">Tên sản phẩm Tên sản phẩm Tên sản phẩm Tên sản phẩm</a></h3>
+                                <dl class="price">
+                                    <dt>Giá:</dt>
+                                    <dd><strong>$15.90</strong> <del>$17.90</del></dd>
+                                </dl>
+							</div>
+							
+						</li>
+						<li class="n_3">
+							<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+							<div class="badge discount">20%</div>
+							<div class="badge new">New</div>
+							<div class="badge fav">Favorite</div>
+							</div>
+							<div class="info">
+								<h3 class="title"><a href="product.html" title="">Tên sản phẩm Tên sản phẩm Tên sản phẩm Tên sản phẩm</a></h3>
+                                <dl class="price">
+                                    <dt>Giá:</dt>
+                                    <dd><strong>$15.90</strong> <del>$17.90</del></dd>
+                                </dl>
+							</div>
+							
+						</li>
+						<li class="n_4">
+							<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+							<div class="badge discount">20%</div>
+							<div class="badge new">New</div>
+							<div class="badge fav">Favorite</div>
+							</div>
+							<div class="info">
+								<h3 class="title"><a href="product.html" title="">Tên sản phẩm Tên sản phẩm Tên sản phẩm Tên sản phẩm</a></h3>
+                                <dl class="price">
+                                    <dt>Giá:</dt>
+                                    <dd><strong>$15.90</strong> <del>$17.90</del></dd>
+                                </dl>
+							</div>
+							
+						</li>
+						<li class="n_5">
+							<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+							<div class="badge discount">20%</div>
+							<div class="badge new">New</div>
+							<div class="badge fav">Favorite</div>
+							</div>
+							<div class="info">
+								<h3 class="title"><a href="product.html" title="">Tên sản phẩm Tên sản phẩm Tên sản phẩm Tên sản phẩm</a></h3>
+                                <dl class="price">
+                                    <dt>Giá:</dt>
+                                    <dd><strong>$15.90</strong> <del>$17.90</del></dd>
+                                </dl>
+							</div>
+							
+						</li>
+						<li class="n_6">
+							<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+							<div class="badge discount">20%</div>
+							<div class="badge new">New</div>
+							<div class="badge fav">Favorite</div>
+							</div>
+							<div class="info">
+								<h3 class="title"><a href="product.html" title="">Tên sản phẩm Tên sản phẩm Tên sản phẩm Tên sản phẩm</a></h3>
+                                <dl class="price">
+                                    <dt>Giá:</dt>
+                                    <dd><strong>$15.90</strong> <del>$17.90</del></dd>
+                                </dl>
+							</div>
+							
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section class="cat-gr">
+			<div class="row table">
+				<div class="col links">
+					<div class="header">
+						<h2><a href="category.html">Category</a></h2>
+					</div>
+					<ul class="subcat">
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+						<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					</ul>
+				</div>
+				<div class="col slide-ct">
+					<ul id="slide-cat-3">
+						<li>
+							<a href="#" title=""><img src="http://atms01.alicdn.com/tps/i1/TB1MiWwHFXXXXagXpXXL2TJPFXX-480-550.jpg" alt=""></a>
+						</li>
+						<li>
+							<a href="#" title=""><img src="http://atms01.alicdn.com/tps/i1/TB1MiWwHFXXXXagXpXXL2TJPFXX-480-550.jpg" alt=""></a>
+						</li>
+						<li>
+							<a href="#" title=""><img src="http://atms01.alicdn.com/tps/i1/TB1MiWwHFXXXXagXpXXL2TJPFXX-480-550.jpg" alt=""></a>
+						</li>
+						<li>
+							<a href="#" title=""><img src="http://atms01.alicdn.com/tps/i1/TB1MiWwHFXXXXagXpXXL2TJPFXX-480-550.jpg" alt=""></a>
+						</li>
+						<li>
+							<a href="#" title=""><img src="http://atms01.alicdn.com/tps/i1/TB1MiWwHFXXXXagXpXXL2TJPFXX-480-550.jpg" alt=""></a>
+						</li>
+					</ul>
+				</div>
+				<div class="col">
+					<ul class="products">
+						<li class="n_1">
+							<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+							<div class="badge discount">20%</div>
+							<div class="badge new">New</div>
+							<div class="badge fav">Favorite</div>
+							</div>
+							<div class="info">
+								<h3 class="title"><a href="product.html" title="">Tên sản phẩm Tên sản phẩm Tên sản phẩm Tên sản phẩm</a></h3>
+                                <dl class="price">
+                                    <dt>Giá:</dt>
+                                    <dd><strong>$15.90</strong> <del>$17.90</del></dd>
+                                </dl>
+							</div>
+							
+						</li>
+						<li class="n_2">
+							<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+							<div class="badge discount">20%</div>
+							<div class="badge new">New</div>
+							<div class="badge fav">Favorite</div>
+							</div>
+							<div class="info">
+								<h3 class="title"><a href="product.html" title="">Tên sản phẩm Tên sản phẩm Tên sản phẩm Tên sản phẩm</a></h3>
+                                <dl class="price">
+                                    <dt>Giá:</dt>
+                                    <dd><strong>$15.90</strong> <del>$17.90</del></dd>
+                                </dl>
+							</div>
+							
+						</li>
+						<li class="n_3">
+							<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+							<div class="badge discount">20%</div>
+							<div class="badge new">New</div>
+							<div class="badge fav">Favorite</div>
+							</div>
+							<div class="info">
+								<h3 class="title"><a href="product.html" title="">Tên sản phẩm Tên sản phẩm Tên sản phẩm Tên sản phẩm</a></h3>
+                                <dl class="price">
+                                    <dt>Giá:</dt>
+                                    <dd><strong>$15.90</strong> <del>$17.90</del></dd>
+                                </dl>
+							</div>
+							
+						</li>
+						<li class="n_4">
+							<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+							<div class="badge discount">20%</div>
+							<div class="badge new">New</div>
+							<div class="badge fav">Favorite</div>
+							</div>
+							<div class="info">
+								<h3 class="title"><a href="product.html" title="">Tên sản phẩm Tên sản phẩm Tên sản phẩm Tên sản phẩm</a></h3>
+                                <dl class="price">
+                                    <dt>Giá:</dt>
+                                    <dd><strong>$15.90</strong> <del>$17.90</del></dd>
+                                </dl>
+							</div>
+							
+						</li>
+						<li class="n_5">
+							<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+							<div class="badge discount">20%</div>
+							<div class="badge new">New</div>
+							<div class="badge fav">Favorite</div>
+							</div>
+							<div class="info">
+								<h3 class="title"><a href="product.html" title="">Tên sản phẩm Tên sản phẩm Tên sản phẩm Tên sản phẩm</a></h3>
+                                <dl class="price">
+                                    <dt>Giá:</dt>
+                                    <dd><strong>$15.90</strong> <del>$17.90</del></dd>
+                                </dl>
+							</div>
+							
+						</li>
+						<li class="n_6">
+							<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+							<div class="badge discount">20%</div>
+							<div class="badge new">New</div>
+							<div class="badge fav">Favorite</div>
+							</div>
+							<div class="info">
+								<h3 class="title"><a href="product.html" title="">Tên sản phẩm Tên sản phẩm Tên sản phẩm Tên sản phẩm</a></h3>
+                                <dl class="price">
+                                    <dt>Giá:</dt>
+                                    <dd><strong>$15.90</strong> <del>$17.90</del></dd>
+                                </dl>
+							</div>
+							
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		
+		
+		<div class="clear"></div>
+		
+	</div>
+	
+</div>
+<!-- /BODY -->
+<div class="bannerBox">
+    <div class="wrap">
+		<div class="row table table_space">
+			<div class="newsletter col col_3-1">
+				<h3>Akční nabídky do emailu</h3>
+				<p>Každý pátek ráno Vám dorazí ty nejzajímavější slevy</p>		
+				<form action="" method="post">
+							
+	
+							<fieldset>
+								<input placeholder="Zadejte váš email" type="text" name="email">
+								<button type="submit" name="subscribe" class="button">Odeslat</button>
+							</fieldset>
+							
+						</form>
+			</div>
+			<div class="imgBanner col col_3-1" style="background-image:url('http://dev.tamda.eu/image/homepage/jezkuv-statek.jpg')">
+				
+	
+				<h3><a title="Jak se dělá jogur na Ježkově statku" href="/tema/jezkuv-statek?_ref=hp-banner"><b>Jak se dělá
+							jogurt <i>Příběh jogurtu z Ježkova statku</i></b></a></h3>
+			</div>
+			<div class="imgBanner col col_3-1" style="background-image:url('http://dev.tamda.eu/image/homepage/tchibo-espresso.jpg')">
+				
+				<h3><a title="Espresso - 5 otázek, které by Vás mohly zajímat" href="/tema/espresso-pet-otazek?_ref=hp-banner"><b>Téma espresso <i>5 otázek, které vás možná
+								pálí</i></b></a></h3>
+			</div>
+		</div>
+    </div>
+</div>
+<!-- FOOTER -->
+<div id="footer">
+	<div class="wrap">
+		<div class="row">
+			<div class="col col_3-1">
+				<ul class="contact">
+        			<li class="phone"><span><strong>+420 773 458 888</strong></span> <span>(Po - Pá&nbsp;10 - 23, So - Ne&nbsp;8.30 - 23)</span></li>
+        			<li class="mail"><span><strong><a href="mailto:tde@tamda.eu">tde@tamda.eu</a></strong></span> <span>Na e-mail se snažíme odpovídat okamžitě</span>
+        </li>
+				</ul>
+			</div>
+			<div class="col col_3-2">
+				<div class="row table">
+					<div class="col col_3-1">
+						<h5>My Account</h5>
+						<ul>
+						  <li><a title="My Account" href="http://dev.tamda.eu/index.php?route=account/account">My Account</a></li>
+						  <li><a title="Order History" href="http://dev.tamda.eu/index.php?route=account/order">Order History</a></li>
+						  <li><a title="Wish List" href="http://dev.tamda.eu/index.php?route=account/wishlist">Wish List</a></li>
+						  <li><a title="Newsletter" href="http://dev.tamda.eu/index.php?route=account/newsletter">Newsletter</a></li>
+						</ul>
+					</div>
+					<div class="col col_3-1">
+						<h5>Customer Service</h5>
+						<ul>
+						  <li><a title="Contact Us" href="http://dev.tamda.eu/index.php?route=information/contact">Contact Us</a></li>
+						  <li><a title="Returns" href="http://dev.tamda.eu/index.php?route=account/return/add">Returns</a></li>
+						  <li><a title="Site Map" href="http://dev.tamda.eu/index.php?route=information/sitemap">Site Map</a></li>
+						</ul>
+					</div>
+					<div class="col col_3-1" style="width:280px;">
+						<div class="fb-page" data-href="https://www.facebook.com/tamda.eu" data-width="280" data-height="224" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/tamda.eu"><a href="https://www.facebook.com/tamda.eu">tamda.eu</a></blockquote></div></div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+<!-- /FOOTER -->
+
+<!-- /NOTIFICATION -->
+<div id="notification">
+	<div class="wrap">
+		<div id="notification-msg"></div>
+		<button onClick="close_ntf()" class="close">Close</button>
+	</div>
+</div>
+<div id="inline-error"></div>
+</div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=1428992770730900";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</body>
+</html>

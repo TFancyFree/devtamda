@@ -1,0 +1,16 @@
+<script type="text/javascript">
+var res_data = {"content": "<tr id=\"address_8\" class=\"default\"><td class=\"df\"><a href=\"#\" class=\"ajax\"></a></td><td class=\"name\">Nguyễn Đình Dũng</td><td class=\"phone\">+84933459044</td><td class=\"address\">Libušská 319/126</td><td class=\"city\">Prague</td><td class=\"state\">Prague</td><td class=\"zipcode\">142 00</td><td class=\"btns\"><button onclick=\"c_edit(8)\">Sửa</button> <button onclick=\"c_delete(8)\">Xóa</button></td></tr><tr class=\"spacer\"><td></td></tr>"
+};
+jQuery(function($)
+{
+	show_ntf('Thêm địa chỉ thành công');
+	
+	// nếu chọn mặc định
+	$('#address-list > tbody > tr').removeClass('default');
+	//----//
+	
+	toggle_show('#form-add-address');
+	$("#form-add-address").trigger('reset');
+	$('#address-list tbody').prepend(res_data.content);
+});
+</script>

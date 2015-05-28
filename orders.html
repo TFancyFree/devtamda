@@ -1,0 +1,866 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700,800&amp;subset=latin-ext' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="js/jquery.scrollTo.min.js"></script>
+<script type="text/javascript" src="js/perfect-scrollbar.jquery.min.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/cart.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.3.1/moment.min.js"></script>
+<script type="text/javascript" src="js/jquery.comiseo.daterangepicker.min.js"></script>
+<link rel="stylesheet" href="jquery-ui.css">
+<link rel="stylesheet" href="jquery.comiseo.daterangepicker.css">
+
+</head>
+<body>
+<!--
+body class:
+	home			trang chủ
+	product-list	trang danh sách sp
+	product			trang chi tiết sp
+	checkout		trang thanh toán
+    prdincart		có sp trong giỏ hàng
+!-->
+<div id="global">
+<!-- HEADER -->	
+<div id="header">
+	<div class="wrap">
+		<div id="logo">
+			<h1><a href="index.html" title=""><img src="images/logo.png" title="" alt="" /></a></h1>
+		</div>
+		<div id="cart" data-total="3000" data-delivery="100" data-free-delivery="10000">
+			<div class="header">
+				<h6>Cart Empty</h6>
+			</div>
+			<div class="cart-dt">
+				<div class="items">
+					
+				</div>
+				<div class="footer bar">
+					<div class="sum">
+						<p class="delivery"><i></i> <strong class="cart_delivery"><span class="n curr"></span></strong></p>
+						<p class="sum_p"><span>Tiền hàng</span> <strong class="cart_price"><span class="n curr">3100 Kč</span></strong></p>
+					</div>
+					<a href="checkout.html" class="button">Order</a>		
+					<div class="tips deliveryUpsell">
+						Get 100 CZK for purchase and free shipping
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="right">
+			
+			<div class="nav-fav">
+				<a href="fav.html">
+				<span class="icon"></span><span class="label">Yêu
+thích</span></a>
+			</div>
+			<div class="nav-user" id="user-area">
+				<div class="icon"></div>
+				<div class="label">
+				<a href="account.html">Nguyễn Đình Dũng</a>
+				<a href="logout.html" class="link">Logout</a>
+				</div>
+				<div id="user-menu" class="box">	 
+					 <ul class="nav">
+						<li><a rel="nofollow" href="profile.html">My AliExpress</a></li>
+						<li><a rel="nofollow" href="orders.html" data-spm-anchor-id="2114.11010108.0.22">My Orders</a></li>
+						<li><a rel="nofollow" href="fav.html">Wish List</a></li>
+						<li><a rel="nofollow" href="profile.html">My Coupons</a></li>
+						<li><a href="profile.html">My Points</a></li>
+					<li><a href="profile.html" rel="nofollow">My Alipay</a></li></ul>
+				</div>
+			</div>
+		</div>
+		<div id="search">
+			<form action="search.html">
+				<div class="search_input">
+					<input type="text" value="" name="q" placeholder="Tên hàng hoặc 5 số cuối mã vạch" id="search-value" />
+					<button type="submit"></button>
+                </div>
+            </form>
+            <div id="search-result">
+            </div>
+        </div>
+		
+		
+			
+    </div>
+</div>
+<div id="menu">
+	<div class="wrap">
+		<ul>
+			<li><a href="category.html" title=""><span class="disc">Akce</span></a></li>
+			<li class="active"><a href="category.html">Drogerie</a>
+				<ul>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li class="active"><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+				</ul>
+			</li>
+			<li><a href="category.html">Drogerie</a>
+				<ul>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+				</ul>
+			</li>
+			<li><a href="category.html">Drogerie</a>
+				<ul>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+				</ul>
+			</li>
+			<li><a href="category.html">Drogerie</a>
+				<ul>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+				</ul>
+			</li>
+			<li><a href="category.html">Drogerie</a>
+				<ul>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+				</ul>
+			</li>
+			<li><a href="category.html">Drogerie</a>
+				<ul>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+				</ul>
+			</li>
+			<li><a href="category.html">Drogerie</a>
+				<ul>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+				</ul>
+			</li>
+			<li><a href="category.html">Drogerie</a>
+				<ul>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+				</ul>
+			</li>
+			<li><a href="category.html">Drogerie</a>
+				<ul>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+				</ul>
+			</li>
+			<li><a href="category.html">Drogerie</a>
+				<ul>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>
+<!-- /HEADER -->
+<div id="breadcrumb" class="aside">
+	<div class="wrap">
+		<div class="br-ct">
+			<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+				<a href="http://www.example.com/books" itemprop="url"><span itemprop="title">Books</span></a> ›
+				<div class="child" itemprop="child" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+					<a href="http://www.example.com/books/authors" itemprop="url"><span itemprop="title">Authors</span></a> ›
+					<div class="child" itemprop="child" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+						<a href="http://www.example.com/books/authors/stephenking" itemprop="url"><span itemprop="title">Stephen King</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- BODY -->
+<div id="body">
+	<div class="wrap">
+		<div id="sidebar">
+			<div class="header">
+				<h3>My Account</h3>	
+			</div>
+			<ul class="menu">
+				<li><a href="#">Overview</a></li>
+				<li class="current"><a href="orders.html">My Orders</a></li>
+				<li><a href="recent.html">Recently Viewed Products</a></li>
+				<li><a href="address.html">My Shipping Address</a></li>
+				<li><a href="password.html">Change Password</a></li>
+			</ul>
+		</div>
+		<div id="right">
+		<script type="text/javascript">
+$(function()
+{
+	$(document).on('click', 'a.nav-page',function(event)
+	{
+		event.preventDefault();
+		a = $( event.target );
+		if(a.hasClass('btn-loading') === false)
+		{
+			a.addClass('btn-loading');
+			a.text('Loading...')
+			$.ajax({
+				url: a.attr('href'),
+				success:function(data)
+				{
+					a.parent().remove();
+					$("table.order-list > tbody").append(data);
+				}
+			});
+			
+		}
+	});
+	$(document).on('change','#order-filter input, #order-filter select',function(event){
+							$('#order-filter').trigger('submit')
+						});
+						$(document).on('submit', '#order-filter',function(event)
+						{
+							a = $( event.target );
+							event.preventDefault();
+							form_c = a.serializeArray();
+							loading = '<div class="loading-page"><div class="msg">Loading...</div></div>';
+							$pl_loading = $(loading);
+							$('#order-content').append($pl_loading);
+							loading_pos('#order-content');
+							$(window).scroll(function () {
+								loading_pos('#order-content');
+							});
+							$(window).resize(function () {
+								loading_pos('#order-content');
+							});
+							c = $.ajax({
+								url:a.attr('action'),
+								data:form_c,
+								type:'POST',
+								success: function(data){
+									$('#order-content').html(data);
+								}
+							});
+						});
+});
+</script>
+		<div id="order-content" class="replace-content">
+			<div class="ttitle">
+			<div class="filter right">
+				<form action="demo/order_filter.html" id="order-filter">
+				<div class="r">
+				<div class="it">
+				<label for="f_status">Trạng thái</label>
+				<select class="ui" name="status" id="f_status">
+					<option value="" selected="">Tất cả</option>
+					<option value="1">Đã giao</option>
+					<option value="2">Chưa chuẩn bị</option>
+					<option value="3">Chưa xác nhận</option>
+					<option value="4">Đang chuẩn bị</option>
+					<option value="5">Đã chít xong</option>
+				</select>
+				</div>
+				<div class="it">
+				
+				<label for="f_date_type">Ngày</label>
+				<select class="ui" name="date_type" id="f_date_type">
+					<option value="" selected="">Tất cả</option>
+					<option value="1">Ngày đặt hàng</option>
+					<option value="2">Ngày giao hàng</option>
+				</select>
+				</div>
+				<div class="it">
+				<input class="raw" id="e5" name="date">
+				</div>
+				</div>
+				
+				
+				<script id="script_e5">
+					$(function() {
+						
+					    $("#e5").daterangepicker(
+						{
+							initialText : 'Chọn ngày...',
+							presetRanges:[
+								{
+									text:"Hôm nay",
+									dateStart:function(){return moment()},
+									dateEnd:function(){return moment()}
+								},
+								{
+									text:"Hôm qua",
+									dateStart:function(){return moment().subtract("days",1)},
+									dateEnd:function(){return moment().subtract("days",1)}
+								},
+								{
+									text:"7 ngày trước",
+									dateStart:function(){return moment().subtract("days",6)},
+									dateEnd:function(){return moment()}},
+								{
+									text:"Tuần trước",
+									dateStart:function(){return moment().subtract("days",7).isoWeekday(1)},
+									dateEnd:function(){return moment().subtract("days",7).isoWeekday(7)}
+								},
+								{
+									text:"Trong tháng này",
+									dateStart:function(){return moment().startOf("month")},
+									dateEnd:function(){return moment()}
+								},
+								{
+									text:"Tháng trước",
+									dateStart:function(){return moment().subtract("month",1).startOf("month")},
+									dateEnd:function(){return moment().subtract("month",1).endOf("month")}},
+								{text:"Trong năm nay",
+									dateStart:function(){return moment().startOf("year")},
+									dateEnd:function(){return moment()}
+								}]
+						}
+						);
+						
+					});
+				</script>
+				</form>
+			</div>
+			<h1>My Orders</h1></div>
+			<table class="order-list list">
+				<thead>
+					<tr>
+						<th class="n">ID</th>
+						<th>Trạng thái</th>
+						<th>Ngày đặt</th>
+						<th>Ngày giao</th>
+						<th class="price"><p>Tiền đặt</p><p class="real">Tiền giao</p></th>
+						<th class="address">Địa chỉ</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr id="invoice_1" class="completed"><!-- id của đơn hàng: invoice_[id] -->
+						<td class="n">#68</td>
+						<td class="status label"><p>Đã giao</p></td>
+						<td class="date">04/05/2015</td>
+						<td class="date">04/05/2015</td>
+						<td class="price">
+							<p>76,331.80 Kc</p>
+							<p class="real">76,331.80 Kc</p>
+						</td>
+						<td class="address">Libušská 319/126, Praha - Písnice, Praha 4 14200</td>
+						<td class="btns"><a href="reorder.html" class="button">Re-Order</a>
+						<button class="show-detail" onClick="show_invoice(1)"></button></td>
+					</tr>
+					<tr class="ex" id="list_invoice_1"><!-- id của đơn hàng: list_invoice_[id] -->
+						<td colspan="7">
+							<table>
+								
+								<tbody>
+									<tr>
+										<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+										<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+										<td class="ean"><s class="icon ean"></s>2121212</td>
+										<td class="price_s">100 Kč</td>
+										<td class="qty">&times; 7</td>
+										<td class="price">700 Kč</td>
+									</tr>
+									<tr>
+										<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+										<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+										<td class="ean"><s class="icon ean"></s>2121212</td>
+										<td class="price_s">100 Kč</td>
+										<td class="qty">&times; 7</td>
+										<td class="price">700 Kč</td>
+									</tr>
+									<tr>
+										<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+										<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+										<td class="ean"><s class="icon ean"></s>2121212</td>
+										<td class="price_s">100 Kč</td>
+										<td class="qty">&times; 7</td>
+										<td class="price">700 Kč</td>
+									</tr>
+									<tr>
+										<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+										<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+										<td class="ean"><s class="icon ean"></s>2121212</td>
+										<td class="price_s">100 Kč</td>
+										<td class="qty">&times; 7</td>
+										<td class="price">700 Kč</td>
+									</tr>
+									<tr>
+										<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+										<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+										<td class="ean"><s class="icon ean"></s>2121212</td>
+										<td class="price_s">100 Kč</td>
+										<td class="qty">&times; 7</td>
+										<td class="price">700 Kč</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+					<tr class="spacer"><td colspan="7"></td></tr>
+					<tr id="invoice_2" class="waiting"><!-- id của đơn hàng: invoice_[id] -->
+						<td class="n">#68</td>
+						<td class="status label"><p>Chưa chuẩn bị</p></td>
+						<td class="date">04/05/2015</td>
+						<td class="date">04/05/2015</td>
+						<td class="price">
+							<p>76,331.80 Kc</p>
+							<p class="real">76,331.80 Kc</p>
+						</td>
+						<td class="address">Libušská 319/126, Praha - Písnice, Praha 4 14200</td>
+						<td class="btns"><a href="reorder.html" class="button">Re-Order</a>
+						<button class="show-detail" onClick="show_invoice(2)"></button></td>
+					</tr>
+					<tr class="ex" id="list_invoice_2"><!-- id của đơn hàng: list_invoice_[id] -->
+						<td colspan="7">
+							<table>
+								
+								<tbody>
+									<tr>
+										<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+										<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+										<td class="ean"><s class="icon ean"></s>2121212</td>
+										<td class="price_s">100 Kč</td>
+										<td class="qty">&times; 7</td>
+										<td class="price">700 Kč</td>
+									</tr>
+									<tr>
+										<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+										<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+										<td class="ean"><s class="icon ean"></s>2121212</td>
+										<td class="price_s">100 Kč</td>
+										<td class="qty">&times; 7</td>
+										<td class="price">700 Kč</td>
+									</tr>
+									<tr>
+										<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+										<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+										<td class="ean"><s class="icon ean"></s>2121212</td>
+										<td class="price_s">100 Kč</td>
+										<td class="qty">&times; 7</td>
+										<td class="price">700 Kč</td>
+									</tr>
+									<tr>
+										<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+										<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+										<td class="ean"><s class="icon ean"></s>2121212</td>
+										<td class="price_s">100 Kč</td>
+										<td class="qty">&times; 7</td>
+										<td class="price">700 Kč</td>
+									</tr>
+									<tr>
+										<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+										<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+										<td class="ean"><s class="icon ean"></s>2121212</td>
+										<td class="price_s">100 Kč</td>
+										<td class="qty">&times; 7</td>
+										<td class="price">700 Kč</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+					<tr class="spacer"><td colspan="7"></td></tr>
+					<tr id="invoice_3" class="pending"><!-- id của đơn hàng: invoice_[id] -->
+						<td class="n">#68</td>
+						<td class="status label"><p>Chưa xác nhận</p></td>
+						<td class="date">04/05/2015</td>
+						<td class="date">04/05/2015</td>
+						<td class="price">
+							<p>76,331.80 Kc</p>
+							<p class="real">76,331.80 Kc</p>
+						</td>
+						<td class="address">Libušská 319/126, Praha - Písnice, Praha 4 14200</td>
+						<td class="btns"><a href="reorder.html" class="button">Re-Order</a>
+						<button class="show-detail" onClick="show_invoice(3)"></button></td>
+					</tr>
+					<tr class="ex" id="list_invoice_3"><!-- id của đơn hàng: list_invoice_[id] -->
+						<td colspan="7">
+							<table>
+								
+								<tbody>
+									<tr>
+										<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+										<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+										<td class="ean"><s class="icon ean"></s>2121212</td>
+										<td class="price_s">100 Kč</td>
+										<td class="qty">&times; 7</td>
+										<td class="price">700 Kč</td>
+									</tr>
+									<tr>
+										<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+										<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+										<td class="ean"><s class="icon ean"></s>2121212</td>
+										<td class="price_s">100 Kč</td>
+										<td class="qty">&times; 7</td>
+										<td class="price">700 Kč</td>
+									</tr>
+									<tr>
+										<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+										<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+										<td class="ean"><s class="icon ean"></s>2121212</td>
+										<td class="price_s">100 Kč</td>
+										<td class="qty">&times; 7</td>
+										<td class="price">700 Kč</td>
+									</tr>
+									<tr>
+										<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+										<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+										<td class="ean"><s class="icon ean"></s>2121212</td>
+										<td class="price_s">100 Kč</td>
+										<td class="qty">&times; 7</td>
+										<td class="price">700 Kč</td>
+									</tr>
+									<tr>
+										<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+										<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+										<td class="ean"><s class="icon ean"></s>2121212</td>
+										<td class="price_s">100 Kč</td>
+										<td class="qty">&times; 7</td>
+										<td class="price">700 Kč</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+					<tr class="spacer"><td colspan="7"></td></tr>
+					<tr id="invoice_4" class="preparing"><!-- id của đơn hàng: invoice_[id] -->
+						<td class="n">#68</td>
+						<td class="status label"><p>Đang chuẩn bị</p></td>
+						<td class="date">04/05/2015</td>
+						<td class="date">04/05/2015</td>
+						<td class="price">
+							<p>76,331.80 Kc</p>
+							
+						</td>
+						<td class="address">Libušská 319/126, Praha - Písnice, Praha 4 14200</td>
+						<td class="btns"><a href="reorder.html" class="button">Re-Order</a>
+						<button class="show-detail" onClick="show_invoice(4)"></button></td>
+					</tr>
+					<tr class="ex" id="list_invoice_4"><!-- id của đơn hàng: list_invoice_[id] -->
+						<td colspan="7">
+							<table>
+								
+								<tbody>
+									<tr>
+										<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+										<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+										<td class="ean"><s class="icon ean"></s>2121212</td>
+										<td class="price_s">100 Kč</td>
+										<td class="qty">&times; 7</td>
+										<td class="price">700 Kč</td>
+									</tr>
+									<tr>
+										<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+										<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+										<td class="ean"><s class="icon ean"></s>2121212</td>
+										<td class="price_s">100 Kč</td>
+										<td class="qty">&times; 7</td>
+										<td class="price">700 Kč</td>
+									</tr>
+									<tr>
+										<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+										<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+										<td class="ean"><s class="icon ean"></s>2121212</td>
+										<td class="price_s">100 Kč</td>
+										<td class="qty">&times; 7</td>
+										<td class="price">700 Kč</td>
+									</tr>
+									<tr>
+										<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+										<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+										<td class="ean"><s class="icon ean"></s>2121212</td>
+										<td class="price_s">100 Kč</td>
+										<td class="qty">&times; 7</td>
+										<td class="price">700 Kč</td>
+									</tr>
+									<tr>
+										<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+										<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+										<td class="ean"><s class="icon ean"></s>2121212</td>
+										<td class="price_s">100 Kč</td>
+										<td class="qty">&times; 7</td>
+										<td class="price">700 Kč</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+					<tr class="spacer"><td colspan="7"></td></tr>
+					<tr id="invoice_5" class="paid"><!-- id của đơn hàng: invoice_[id] -->
+						<td class="n">#68</td>
+						<td class="status label"><p>Đã chít xong</p></td>
+						<td class="date">04/05/2015</td>
+						<td class="date">04/05/2015</td>
+						<td class="price">
+							<p>76,331.80 Kc</p>
+							<p class="real">76,331.80 Kc</p>
+						</td>
+						<td class="address">Libušská 319/126, Praha - Písnice, Praha 4 14200</td>
+						<td class="btns"><a href="reorder.html" class="button">Re-Order</a>
+						<button class="show-detail" onClick="show_invoice(5)"></button></td>
+					</tr>
+					<tr class="ex" id="list_invoice_5"><!-- id của đơn hàng: list_invoice_[id] -->
+						<td colspan="7">
+							<table>
+								
+								<tbody>
+									<tr>
+										<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+										<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+										<td class="ean"><s class="icon ean"></s>2121212</td>
+										<td class="price_s">100 Kč</td>
+										<td class="qty">&times; 7</td>
+										<td class="price">700 Kč</td>
+									</tr>
+									<tr>
+										<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+										<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+										<td class="ean"><s class="icon ean"></s>2121212</td>
+										<td class="price_s">100 Kč</td>
+										<td class="qty">&times; 7</td>
+										<td class="price">700 Kč</td>
+									</tr>
+									<tr>
+										<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+										<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+										<td class="ean"><s class="icon ean"></s>2121212</td>
+										<td class="price_s">100 Kč</td>
+										<td class="qty">&times; 7</td>
+										<td class="price">700 Kč</td>
+									</tr>
+									<tr>
+										<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+										<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+										<td class="ean"><s class="icon ean"></s>2121212</td>
+										<td class="price_s">100 Kč</td>
+										<td class="qty">&times; 7</td>
+										<td class="price">700 Kč</td>
+									</tr>
+									<tr>
+										<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+										<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+										<td class="ean"><s class="icon ean"></s>2121212</td>
+										<td class="price_s">100 Kč</td>
+										<td class="qty">&times; 7</td>
+										<td class="price">700 Kč</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+					<tr class="spacer"><td colspan="7"></td></tr>
+					
+				</tbody>
+			</table>
+			<div class="list_footer"><a class="nav-page button" href="demo/order_more.html">Xem tiếp</a></div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	
+</div>
+<!-- /BODY -->
+<!-- FOOTER -->
+<div id="footer">
+	<div class="wrap">
+		<div class="row">
+			<div class="col col_3-1">
+				<ul class="contact">
+        			<li class="phone"><span><strong>+420 773 458 888</strong></span> <span>(Po - Pá&nbsp;10 - 23, So - Ne&nbsp;8.30 - 23)</span></li>
+        			<li class="mail"><span><strong><a href="mailto:tde@tamda.eu">tde@tamda.eu</a></strong></span> <span>Na e-mail se snažíme odpovídat okamžitě</span>
+        </li>
+				</ul>
+			</div>
+			<div class="col col_3-2">
+				<div class="row table">
+					<div class="col col_3-1">
+						<h5>My Account</h5>
+						<ul>
+						  <li><a title="My Account" href="http://dev.tamda.eu/index.php?route=account/account">My Account</a></li>
+						  <li><a title="Order History" href="http://dev.tamda.eu/index.php?route=account/order">Order History</a></li>
+						  <li><a title="Wish List" href="http://dev.tamda.eu/index.php?route=account/wishlist">Wish List</a></li>
+						  <li><a title="Newsletter" href="http://dev.tamda.eu/index.php?route=account/newsletter">Newsletter</a></li>
+						</ul>
+					</div>
+					<div class="col col_3-1">
+						<h5>Customer Service</h5>
+						<ul>
+						  <li><a title="Contact Us" href="http://dev.tamda.eu/index.php?route=information/contact">Contact Us</a></li>
+						  <li><a title="Returns" href="http://dev.tamda.eu/index.php?route=account/return/add">Returns</a></li>
+						  <li><a title="Site Map" href="http://dev.tamda.eu/index.php?route=information/sitemap">Site Map</a></li>
+						</ul>
+					</div>
+					<div class="col col_3-1" style="width:280px;">
+						<div class="fb-page" data-href="https://www.facebook.com/tamda.eu" data-width="280" data-height="224" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/tamda.eu"><a href="https://www.facebook.com/tamda.eu">tamda.eu</a></blockquote></div></div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+<!-- /FOOTER -->
+
+<!-- /NOTIFICATION -->
+<div id="notification">
+	<div class="wrap">
+		<div id="notification-msg"></div>
+		<button onClick="close_ntf()" class="close">Close</button>
+	</div>
+</div>
+<div id="inline-error"></div>
+<div id="temp"></div>
+</div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=1428992770730900";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</body>
+</html>

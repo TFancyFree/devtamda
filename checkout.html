@@ -1,0 +1,1189 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700,800&amp;subset=latin-ext' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="js/jquery.scrollTo.min.js"></script>
+<script type="text/javascript" src="js/perfect-scrollbar.jquery.min.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/cart.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;signed_in=true&amp;libraries=places"></script>
+<script type="text/javascript" src="js/form.js"></script>
+<script type="text/javascript" src="js/address.js"></script>
+</head>
+<body class="checkout">
+<!--
+body class:
+	home			trang chủ
+	product-list	trang danh sách sp
+	product			trang chi tiết sp
+	checkout		trang thanh toán
+    prdincart		có sp trong giỏ hàng
+-->
+<div id="global">
+<!-- HEADER -->	
+<div id="header">
+	<div class="wrap">
+		<div id="logo">
+			<h1><a href="index.html" title=""><img src="images/logo.png" title="" alt="" /></a></h1>
+		</div>
+		
+		<div class="right">
+			
+			<div class="nav-fav">
+				<a href="fav.html">
+				<span class="icon"></span><span class="label">Yêu
+thích</span></a>
+			</div>
+			<div class="nav-user" id="user-area">
+				<div class="icon"></div>
+				<div class="label">
+				<a href="login.html">Đăng nhập</a>
+				<a href="register.html">Đăng ký</a>
+				</div>
+				<div id="user-menu" class="box">
+					<form action="/index.php?route=account/login" method="post"  id="frm-loginForm">
+						<p>Welcome to Tamda</p>
+						<p><a href="/?do=facebookLogin&amp;backlink=6zhyo" class="fb" rel="nofollow">Přihlásit přes facebook</a></p>
+						<p><label for="frm-loginForm-email"><input type="email" name="email" placeholder="Váš e-mail" title="Váš e-mail" id="frm-loginForm-email" class="user"></label></p>
+						<p><label for="frm-loginForm-password"><input type="password" name="password" placeholder="Heslo" title="Heslo" id="frm-loginForm-password" class="password"></label></p>
+		
+						<p class="form-bottom"><a href="#">Zapomenuté heslo?</a><button type="submit" class="button">Přihlásit se</button></p>
+						<div class="div"></div>
+				<p>New Customer?</p>
+				<p class="button-link">
+					<a href="login.html" class="button">Đăng ký</a>
+				</p>
+           			 </form>
+					 
+					 <ul class="nav">
+						<li><a rel="nofollow" href="profile.html">My AliExpress</a></li>
+						<li><a rel="nofollow" href="orders.html" data-spm-anchor-id="2114.11010108.0.22">My Orders</a></li>
+						<li><a rel="nofollow" href="fav.html">Wish List</a></li>
+						<li><a rel="nofollow" href="profile.html">My Coupons</a></li>
+						<li><a href="profile.html">My Points</a></li>
+					<li><a href="profile.html" rel="nofollow">My Alipay</a></li></ul>
+				</div>
+			</div>
+		</div>
+		<div id="search">
+			<form action="search.html">
+				<div class="search_input">
+					<input type="text" value="" name="q" placeholder="Tên hàng hoặc 5 số cuối mã vạch" id="search-value" />
+					<button type="submit"></button>
+                </div>
+            </form>
+            <div id="search-result">
+            </div>
+        </div>
+		
+		
+			
+    </div>
+</div>
+<div id="menu">
+	<div class="wrap">
+		<ul>
+			<li><a href="category.html" title=""><span class="disc">AKče</span></a></li>
+			<li class="active"><a href="category.html">Drogerie</a>
+				<ul>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li class="active"><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+				</ul>
+			</li>
+			<li><a href="category.html">Drogerie</a>
+				<ul>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+				</ul>
+			</li>
+			<li><a href="category.html">Drogerie</a>
+				<ul>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+				</ul>
+			</li>
+			<li><a href="category.html">Drogerie</a>
+				<ul>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+				</ul>
+			</li>
+			<li><a href="category.html">Drogerie</a>
+				<ul>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+				</ul>
+			</li>
+			<li><a href="category.html">Drogerie</a>
+				<ul>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+				</ul>
+			</li>
+			<li><a href="category.html">Drogerie</a>
+				<ul>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+				</ul>
+			</li>
+			<li><a href="category.html">Drogerie</a>
+				<ul>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+				</ul>
+			</li>
+			<li><a href="category.html">Drogerie</a>
+				<ul>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+				</ul>
+			</li>
+			<li><a href="category.html">Drogerie</a>
+				<ul>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+					<li><a href="category.html" title="">Chăm sóc tóc</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>
+<!-- /HEADER -->
+<div id="breadcrumb">
+	<div class="wrap">
+		<div class="br-ct">
+			<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+				<a href="http://www.example.com/books" itemprop="url"><span itemprop="title">Books</span></a> ›
+				<div class="child" itemprop="child" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+					<a href="http://www.example.com/books/authors" itemprop="url"><span itemprop="title">Authors</span></a> ›
+					<div class="child" itemprop="child" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+						<a href="http://www.example.com/books/authors/stephenking" itemprop="url"><span itemprop="title">Stephen King</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- BODY -->
+<div id="body">
+<script type="text/javascript">
+function do_checkout()
+{
+	$('#form_checkout').trigger('submit')
+}
+$(function()
+{
+	$('#input-tip').change(function()
+	{
+		cal_delivery()
+	});
+	$('#cart-address input[name=delivery]').change(function()
+	{
+		cal_delivery()
+		if($(this).attr('id') == 'no_delivery' && $(this).prop('checked') === true)
+		{
+			$('#cart .cart_delivery, #cart-address .price_d').parent().addClass('disabled');
+		}
+		else $('#cart .cart_delivery, #cart-address .price_d').parent().removeClass('disabled');
+	});
+	$('#cart-address input[name=shipping_address]').change(function()
+	{
+		v = $(this).val();
+		$('#address_select input._required').removeClass('required');
+		if(v== 'new') $('#tab_ct_address_select_'+v+' input._required').addClass('required');
+		d = $('#tab_ct_address_select_'+v+' input[name=shipping_current]').val();
+		cal_delivery('',d,'');
+		$('#cart').attr('data-delivery',d);
+	});
+	$('#address_id').change(function()
+	{
+		if($('#tab_ct_address_select_existing .address_info .msg').length) $('#address_select .address_info .msg').remove();
+		loading = "<div class='msg loading'><p>Loading...</p></div>";
+		$l = $(loading);
+		$('#tab_ct_address_select_existing .address_info').append($l);
+		$.ajax({
+		url: 'demo/address_info.json',
+		data:$('#address_id').val(),
+		type:'POST',
+		dataType: "text",
+		success: function(data){
+			var json = $.parseJSON(data);
+			$('#tab_ct_address_select_existing .address_info').html(json.content);
+			$l.remove();
+			c_total = parseFloat($('#cart').attr('data-total'));
+			$('#cart').attr('data-delivery',json.delivery);
+			c_f_delivery =  parseFloat($('#cart').attr('data-free-delivery'));
+			cal_delivery(c_total,json.delivery,c_f_delivery);
+			$('#shipping_current').val(json.delivery);
+			
+		}
+		})
+	})
+});
+</script>
+	<div class="wrap">
+		<div id="right" class="full">
+    	<div class="ttitle">
+			<h1>Shoping Cart</h1>
+        </div>
+		<div class="row table">
+		<div id="cart" class="col" data-total="3000" data-delivery="100" data-free-delivery="10000">
+			<div class="cart-dt">
+			<!-- nếu đơn hàng chưa được miễn phí vận chuyển -->
+			<div class="tips deliveryUpsell">
+				Khách hàng cần đặt thêm <span class="n curr">10 Kč</span> nữa để được miễn phí vận chuyển
+			</div>
+			<!-- nếu đơn hàng được miễn phí vận chuyển
+			
+			
+			<div class="tips deliveryUpsell free">Đơn hàng của bạn sẽ được miễn phí vận chuyển</div>
+			
+			
+			-->
+			<div class="top bar">
+			
+					<button onClick="confirm_box('cart_clear','','<p>Bạn có chắc chắn muốn xóa giỏ hàng không?</p>','Có','Không')" type="button">Xóa giỏ hàng</button>
+					<div class="sum">
+						<p class="delivery"><i></i> <strong class="cart_delivery"><span class="n curr">100 Kč</span></strong></p>
+						<p class="sum_p"><span>Tiền hàng</span> <strong class="cart_price"><span class="n curr">3100 Kč</span></strong></p>
+						<p class="total"><span>Tổng</span> <strong class="cart_price_t"><span class="n curr">3100 Kč</span></strong></p>
+					</div>	
+				</div>
+				<div class="items">
+					<ul class="products list">
+				<li class="product_1212 soldout">
+				<!-- class:
+							product_[id]
+							soldout	//hết hàng
+							incart	//có trong giỏ hàng
+							faved	//đãe thích
+				-->
+					<div class="inner">
+									<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+									<div class="badge new">New</div>
+									</div>
+									<div class="info">
+										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+										<div class="desc">
+										<div class="add2cart update-cart">
+											<p>Hết hàng</p>
+										</div>
+										<dl>
+											<dt>EAN:</dt>
+											<dd>3607343587631</dd>
+										</dl>
+										<dl>
+											<dt>KS/KRT:</dt>
+											<dd>12</dd>
+										</dl>
+										
+										
+										
+										
+										
+										</div>
+									</div>
+									
+									<div class="badge discount">20%</div>
+									<a href="demo/fav.html" class="badge fav ajax">&hearts;</a>
+									<a href="demo/remove.json?id=12" class="remove ajax">&times;</a>
+									<div class="clear"></div>
+								</div>
+				</li>
+				<li class="product_1212 soldout">
+				<!-- class:
+							product_[id]
+							soldout	//hết hàng
+							incart	//có trong giỏ hàng
+							faved	//đãe thích
+				-->
+					<div class="inner">
+									<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+									<div class="badge new">New</div>
+									</div>
+									<div class="info">
+										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+										<div class="desc">
+										<div class="add2cart update-cart">
+											<p>Hết hàng</p>
+										</div>
+										<dl>
+											<dt>EAN:</dt>
+											<dd>3607343587631</dd>
+										</dl>
+										<dl>
+											<dt>KS/KRT:</dt>
+											<dd>12</dd>
+										</dl>
+										
+										
+										
+										
+										
+										</div>
+									</div>
+									
+									<div class="badge discount">20%</div>
+									<a href="demo/fav.html" class="badge fav ajax">&hearts;</a>
+									<a href="demo/remove.json?id=12" class="remove ajax">&times;</a>
+									<div class="clear"></div>
+								</div>
+				</li>			
+				<li class="product_1212">
+				<!-- class:
+							product_[id]
+							soldout	//hết hàng
+							incart	//có trong giỏ hàng
+							faved	//đãe thích
+				-->
+					<div class="inner">
+									<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+									<div class="badge new">New</div>
+									</div>
+									<div class="info">
+										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+										<div class="desc">
+										<div class="add2cart update-cart">
+										<form class="add2cart-form updatecart-form" action="demo/ajax_add2cart.json" method="post">
+										<span class="qty">
+											<button type="button">-</button>
+											<input autocomplete="off" data-max-amount="1200" data-min-amount="10" type="text" name="quantity-update" value="30" data-step-amount="10" data-incart="30" data-price="15.9" />
+											<button type="button">+</button>
+										</span>
+										<input type="hidden" name="product-id" value="12"/>
+<input type="hidden" name="action" value="update"/>
+										<button class="button button-save-cart" type="submit">Lưu</button>
+										</form>
+										<div class="price">&times; <span class="n">30 Kč</span></div>
+										<div class="price_tt"><span class="n">30</span> Kč</div>
+										</div>
+										<dl>
+											<dt>EAN:</dt>
+											<dd>3607343587631</dd>
+										</dl>
+										<dl>
+											<dt>KS/KRT:</dt>
+											<dd>12</dd>
+										</dl>
+										
+										
+										
+										
+										
+										</div>
+									</div>
+									
+									<div class="badge discount">20%</div>
+									<a href="demo/fav.html" class="badge fav ajax">&hearts;</a>
+									<a href="demo/remove.json?id=12" class="remove ajax">&times;</a>
+									<div class="clear"></div>
+								</div>
+				</li>
+				<li class="product_1212">
+				<!-- class:
+							product_[id]
+							soldout	//hết hàng
+							incart	//có trong giỏ hàng
+							faved	//đãe thích
+				-->
+					<div class="inner">
+									<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+									<div class="badge new">New</div>
+									</div>
+									<div class="info">
+										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+										<div class="desc">
+										<div class="add2cart update-cart">
+										<form class="add2cart-form updatecart-form" action="demo/ajax_add2cart.json" method="post">
+										<span class="qty">
+											<button type="button">-</button>
+											<input autocomplete="off" data-max-amount="1200" data-min-amount="10" type="text" name="quantity-update" value="30" data-step-amount="10" data-incart="30" data-price="15.9" />
+											<button type="button">+</button>
+										</span>
+										<input type="hidden" name="product-id" value="12"/>
+<input type="hidden" name="action" value="update"/>
+										<button class="button button-save-cart" type="submit">Lưu</button>
+										</form>
+										<div class="price">&times; <span class="n">30 Kč</span></div>
+										<div class="price_tt"><span class="n">30</span> Kč</div>
+										</div>
+										<dl>
+											<dt>EAN:</dt>
+											<dd>3607343587631</dd>
+										</dl>
+										<dl>
+											<dt>KS/KRT:</dt>
+											<dd>12</dd>
+										</dl>
+										
+										
+										
+										
+										
+										</div>
+									</div>
+									
+									<div class="badge discount">20%</div>
+									<a href="demo/fav.html" class="badge fav ajax">&hearts;</a>
+									<a href="demo/remove.json?id=12" class="remove ajax">&times;</a>
+									<div class="clear"></div>
+								</div>
+				</li>
+				<li class="product_1212">
+				<!-- class:
+							product_[id]
+							soldout	//hết hàng
+							incart	//có trong giỏ hàng
+							faved	//đãe thích
+				-->
+					<div class="inner">
+									<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+									<div class="badge new">New</div>
+									</div>
+									<div class="info">
+										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+										<div class="desc">
+										<div class="add2cart update-cart">
+										<form class="add2cart-form updatecart-form" action="demo/ajax_add2cart.json" method="post">
+										<span class="qty">
+											<button type="button">-</button>
+											<input autocomplete="off" data-max-amount="1200" data-min-amount="10" type="text" name="quantity-update" value="30" data-step-amount="10" data-incart="30" data-price="15.9" />
+											<button type="button">+</button>
+										</span>
+										<input type="hidden" name="product-id" value="12"/>
+<input type="hidden" name="action" value="update"/>
+										<button class="button button-save-cart" type="submit">Lưu</button>
+										</form>
+										<div class="price">&times; <span class="n">30 Kč</span></div>
+										<div class="price_tt"><span class="n">30</span> Kč</div>
+										</div>
+										<dl>
+											<dt>EAN:</dt>
+											<dd>3607343587631</dd>
+										</dl>
+										<dl>
+											<dt>KS/KRT:</dt>
+											<dd>12</dd>
+										</dl>
+										
+										
+										
+										
+										
+										</div>
+									</div>
+									
+									<div class="badge discount">20%</div>
+									<a href="demo/fav.html" class="badge fav ajax">&hearts;</a>
+									<a href="demo/remove.json?id=12" class="remove ajax">&times;</a>
+									<div class="clear"></div>
+								</div>
+				</li>
+				<li class="product_1212">
+				<!-- class:
+							product_[id]
+							soldout	//hết hàng
+							incart	//có trong giỏ hàng
+							faved	//đãe thích
+				-->
+					<div class="inner">
+									<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+									<div class="badge new">New</div>
+									</div>
+									<div class="info">
+										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+										<div class="desc">
+										<div class="add2cart update-cart">
+										<form class="add2cart-form updatecart-form" action="demo/ajax_add2cart.json" method="post">
+										<span class="qty">
+											<button type="button">-</button>
+											<input autocomplete="off" data-max-amount="1200" data-min-amount="10" type="text" name="quantity-update" value="30" data-step-amount="10" data-incart="30" data-price="15.9" />
+											<button type="button">+</button>
+										</span>
+										<input type="hidden" name="product-id" value="12"/>
+<input type="hidden" name="action" value="update"/>
+										<button class="button button-save-cart" type="submit">Lưu</button>
+										</form>
+										<div class="price">&times; <span class="n">30 Kč</span></div>
+										<div class="price_tt"><span class="n">30</span> Kč</div>
+										</div>
+										<dl>
+											<dt>EAN:</dt>
+											<dd>3607343587631</dd>
+										</dl>
+										<dl>
+											<dt>KS/KRT:</dt>
+											<dd>12</dd>
+										</dl>
+										
+										
+										
+										
+										
+										</div>
+									</div>
+									
+									<div class="badge discount">20%</div>
+									<a href="demo/fav.html" class="badge fav ajax">&hearts;</a>
+									<a href="demo/remove.json?id=12" class="remove ajax">&times;</a>
+									<div class="clear"></div>
+								</div>
+				</li>
+				<li class="product_1212">
+				<!-- class:
+							product_[id]
+							soldout	//hết hàng
+							incart	//có trong giỏ hàng
+							faved	//đãe thích
+				-->
+					<div class="inner">
+									<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+									<div class="badge new">New</div>
+									</div>
+									<div class="info">
+										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+										<div class="desc">
+										<div class="add2cart update-cart">
+										<form class="add2cart-form updatecart-form" action="demo/ajax_add2cart.json" method="post">
+										<span class="qty">
+											<button type="button">-</button>
+											<input autocomplete="off" data-max-amount="1200" data-min-amount="10" type="text" name="quantity-update" value="30" data-step-amount="10" data-incart="30" data-price="15.9" />
+											<button type="button">+</button>
+										</span>
+										<input type="hidden" name="product-id" value="12"/>
+<input type="hidden" name="action" value="update"/>
+										<button class="button button-save-cart" type="submit">Lưu</button>
+										</form>
+										<div class="price">&times; <span class="n">30 Kč</span></div>
+										<div class="price_tt"><span class="n">30</span> Kč</div>
+										</div>
+										<dl>
+											<dt>EAN:</dt>
+											<dd>3607343587631</dd>
+										</dl>
+										<dl>
+											<dt>KS/KRT:</dt>
+											<dd>12</dd>
+										</dl>
+										
+										
+										
+										
+										
+										</div>
+									</div>
+									
+									<div class="badge discount">20%</div>
+									<a href="demo/fav.html" class="badge fav ajax">&hearts;</a>
+									<a href="demo/remove.json?id=12" class="remove ajax">&times;</a>
+									<div class="clear"></div>
+								</div>
+				</li>
+				<li class="product_1212">
+				<!-- class:
+							product_[id]
+							soldout	//hết hàng
+							incart	//có trong giỏ hàng
+							faved	//đãe thích
+				-->
+					<div class="inner">
+									<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+									<div class="badge new">New</div>
+									</div>
+									<div class="info">
+										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+										<div class="desc">
+										<div class="add2cart update-cart">
+										<form class="add2cart-form updatecart-form" action="demo/ajax_add2cart.json" method="post">
+										<span class="qty">
+											<button type="button">-</button>
+											<input autocomplete="off" data-max-amount="1200" data-min-amount="10" type="text" name="quantity-update" value="30" data-step-amount="10" data-incart="30" data-price="15.9" />
+											<button type="button">+</button>
+										</span>
+										<input type="hidden" name="product-id" value="12"/>
+<input type="hidden" name="action" value="update"/>
+										<button class="button button-save-cart" type="submit">Lưu</button>
+										</form>
+										<div class="price">&times; <span class="n">30 Kč</span></div>
+										<div class="price_tt"><span class="n">30</span> Kč</div>
+										</div>
+										<dl>
+											<dt>EAN:</dt>
+											<dd>3607343587631</dd>
+										</dl>
+										<dl>
+											<dt>KS/KRT:</dt>
+											<dd>12</dd>
+										</dl>
+										
+										
+										
+										
+										
+										</div>
+									</div>
+									
+									<div class="badge discount">20%</div>
+									<a href="demo/fav.html" class="badge fav ajax">&hearts;</a>
+									<a href="demo/remove.json?id=12" class="remove ajax">&times;</a>
+									<div class="clear"></div>
+								</div>
+				</li>
+				<li class="product_1212">
+				<!-- class:
+							product_[id]
+							soldout	//hết hàng
+							incart	//có trong giỏ hàng
+							faved	//đãe thích
+				-->
+					<div class="inner">
+									<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+									<div class="badge new">New</div>
+									</div>
+									<div class="info">
+										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+										<div class="desc">
+										<div class="add2cart update-cart">
+										<form class="add2cart-form updatecart-form" action="demo/ajax_add2cart.json" method="post">
+										<span class="qty">
+											<button type="button">-</button>
+											<input autocomplete="off" data-max-amount="1200" data-min-amount="10" type="text" name="quantity-update" value="30" data-step-amount="10" data-incart="30" data-price="15.9" />
+											<button type="button">+</button>
+										</span>
+										<input type="hidden" name="product-id" value="12"/>
+<input type="hidden" name="action" value="update"/>
+										<button class="button button-save-cart" type="submit">Lưu</button>
+										</form>
+										<div class="price">&times; <span class="n">30 Kč</span></div>
+										<div class="price_tt"><span class="n">30</span> Kč</div>
+										</div>
+										<dl>
+											<dt>EAN:</dt>
+											<dd>3607343587631</dd>
+										</dl>
+										<dl>
+											<dt>KS/KRT:</dt>
+											<dd>12</dd>
+										</dl>
+										
+										
+										
+										
+										
+										</div>
+									</div>
+									
+									<div class="badge discount">20%</div>
+									<a href="demo/fav.html" class="badge fav ajax">&hearts;</a>
+									<a href="demo/remove.json?id=12" class="remove ajax">&times;</a>
+									<div class="clear"></div>
+								</div>
+				</li>
+				<li class="product_1212">
+				<!-- class:
+							product_[id]
+							soldout	//hết hàng
+							incart	//có trong giỏ hàng
+							faved	//đãe thích
+				-->
+					<div class="inner">
+									<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+									<div class="badge new">New</div>
+									</div>
+									<div class="info">
+										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+										<div class="desc">
+										<div class="add2cart update-cart">
+										<form class="add2cart-form updatecart-form" action="demo/ajax_add2cart.json" method="post">
+										<span class="qty">
+											<button type="button">-</button>
+											<input autocomplete="off" data-max-amount="1200" data-min-amount="10" type="text" name="quantity-update" value="30" data-step-amount="10" data-incart="30" data-price="15.9" />
+											<button type="button">+</button>
+										</span>
+										<input type="hidden" name="product-id" value="12"/>
+<input type="hidden" name="action" value="update"/>
+										<button class="button button-save-cart" type="submit">Lưu</button>
+										</form>
+										<div class="price">&times; <span class="n">30 Kč</span></div>
+										<div class="price_tt"><span class="n">30</span> Kč</div>
+										</div>
+										<dl>
+											<dt>EAN:</dt>
+											<dd>3607343587631</dd>
+										</dl>
+										<dl>
+											<dt>KS/KRT:</dt>
+											<dd>12</dd>
+										</dl>
+										
+										
+										
+										
+										
+										</div>
+									</div>
+									
+									<div class="badge discount">20%</div>
+									<a href="demo/fav.html" class="badge fav ajax">&hearts;</a>
+									<a href="demo/remove.json?id=12" class="remove ajax">&times;</a>
+									<div class="clear"></div>
+								</div>
+				</li>
+			</ul>
+				</div>
+				<div class="footer bar">
+					<button onClick="confirm_box('cart_clear','','<p>Bạn có chắc chắn muốn xóa giỏ hàng không?</p>','Có','Không')" type="button">Xóa giỏ hàng</button>
+					<div class="sum">
+						<p class="delivery"><i></i> <strong class="cart_delivery"><span class="n curr">100 Kč</span></strong></p>
+						<p class="sum_p"><span>Tiền hàng</span> <strong class="cart_price"><span class="n curr">3100 Kč</span></strong></p>
+						<p class="total"><span>Tổng</span> <strong class="cart_price_t"><span class="n curr">3100 Kč</span></strong></p>
+					</div>	
+				</div>
+			<!-- nếu đơn hàng chưa được miễn phí vận chuyển -->
+			<div class="tips deliveryUpsell">
+				Khách hàng cần đặt thêm <span class="n curr">10 Kč</span> nữa để được miễn phí vận chuyển
+			</div>
+			<!-- nếu đơn hàng được miễn phí vận chuyển
+			
+			
+			<div class="tips deliveryUpsell free">Đơn hàng của bạn sẽ được miễn phí vận chuyển</div>
+			
+			
+			-->
+			</div>
+		</div>
+		<div class="col" id="cart-address">
+			<form action="demo/checkout_response.html" method="post" class="ajax validate" id="form_checkout">
+				<div class="txt-frm row">
+					<div class="col col_2-1">
+						<label>Email Address</label>
+						<input type="text" value="david.nguyen.cz@gmail.com" title="E-mail" placeholder="Enter Your E-mail" name="email">
+					</div>
+					<div class="col col_2-1">
+						<label>Telephone</label>
+						<input type="text" value="+84933459044" title="Phone" placeholder="Enter Your Phone" name="phone">
+					</div>
+				</div>
+                <div id="address_select">
+                <ul class="tabs">
+                	<li class="c" id="tab_address_select_existing"><label class="">
+        <input type="radio" name="shipping_address" value="existing" checked="checked" onClick="tab('address_select','existing')"><span class="like-radio"></span> Địa chỉ đã có sẵn</label></li>
+                    <li id="tab_address_select_new"><label class="">
+        <input type="radio" name="shipping_address" value="new"  onClick="tab('address_select','new')"><span class="like-radio"></span> Địa chỉ mới</label>
+		</li>
+                </ul>
+				<div class="clear"></div>
+                <div class="tab_ct c" id="tab_ct_address_select_existing">
+				<div class="row txt-frm">
+                            <div class="col">
+                                <label for="address_id">Address</label>
+                                <select name="address_id" class="form-control" id="address_id">
+                                                <option value="3" selected="selected">Nguyễn Đình Dũng, Libušská 319/126, Praha - Písnice, Praha 4, Praha, Czech Republic</option>
+                                                                <option value="22">Giang Còi, Nad Libusskym 520/5, Praha 4, Praha, Czech Republic</option>
+</select>
+								
+
+</div>
+<div class="clear"></div>
+                        </div>
+				
+				<div class="address_info txt-frm">
+					<div class="row">
+						<dl class="col col_2-1">
+							<dt>Tên:</dt>
+							<dd>Nguyễn Đình Dũng</dd>
+						</dl>
+						<dl class="col col_2-1">
+							<dt>Telephone:</dt>
+							<dd>+84933459044</dd>
+						</dl>
+						<div class="clear"></div>
+					</div>
+					<dl>
+						<dt>Địa chỉ:</dt>
+						<dd>Libušská 319/126, Praha - Písnice, Praha 4, Praha, Czech Republic</dd>
+					</dl>
+					<div class="row">
+					<dl class="col col_2-1">
+							<dt>Khoảng cách tới Tamda:</dt>
+							<dd>13km</dd>
+						</dl>
+						<dl class="col col_2-1">
+							<dt>Phí vận chuyển:</dt>
+							<dd>12 Kč</dd>
+						</dl>
+						<div class="clear"></div>
+						</div>
+						<input type="hidden" name="shipping_current" value="100"><!-- phí vận chuyển của địa chỉ mặc định -->
+				</div>
+                </div>
+                <div class="tab_ct" id="tab_ct_address_select_new">
+                
+                	<fieldset>
+					<div class="row txt-frm">   
+                            <div class="col col_2-1">
+                                <input type="text" name="fullname" class="_required" value="" placeholder="Full Name" id="input-fullname">
+								<p class="g">&nbsp;</p>
+                            </div>
+							<div class="col col_2-1">
+                                <input type="tel" name="telephone" class="_required" value="" placeholder="Telephone" id="input-telephone">
+								<p class="g">&nbsp;</p>
+                            </div>
+							<div class="clear"></div>
+                        </div>
+                        <div class="row txt-frm">   
+                            <div class="col col_2-1">
+                                <input type="text" name="fullname" class="_required" value="" placeholder="Email" id="input-email">
+								<p class="g">&nbsp;</p>
+                            </div>
+                            <div class="col col_2-1">
+                                <input type="text" name="cio" value="" placeholder="ICO" id="input-cio">
+								<p class="g">&nbsp;</p>
+                            </div>
+							<div class="clear"></div>
+                        </div>
+					<div class="row txt-frm">
+                            <div class="col">
+                                <input type="text" name="address" value="" placeholder="Address" id="input-address" class="_required" onfocus="geolocate()" autocomplete="off">
+								<p class="g">&nbsp;</p>
+                            </div>
+							
+							<div class="clear"></div>
+                        </div>
+					<div id="address">
+							<div class="row txt-frm">
+								
+								<div class="col col_4-1">
+											
+											<input type="text" name="address_number" value="" placeholder="Number" id="street_number" autocomplete="off">
+											<p class="g">&nbsp;</p>
+										</div>
+										<div class="col col_4-3">
+											<input type="text" name="route" value="" placeholder="Street" id="route">
+											<p class="g">&nbsp;</p>
+										</div>
+								
+								
+								<div class="clear"></div>
+							</div>
+							<div class="txt-frm row">
+                            	<div class="col col_2-1">
+									<input type="text" name="city" value="" placeholder="City" id="locality">
+									<p class="g">&nbsp;</p>
+								</div>
+								<div class="col col_2-1">
+									<input type="text" value="" name="state" id="administrative_area_level_1" placeholder="State">
+									<p class="g">&nbsp;</p>
+								</div>
+								
+								
+								
+								<div class="clear"></div>
+							</div>
+                            <div class="txt-frm row">
+                            	<div class="col col_2-1">
+									<input type="text" name="postcode" value="" placeholder="Post Code" id="postal_code">
+									<p class="g">&nbsp;</p>
+								</div>
+                                <div class="col col_2-1">
+									<input type="text" name="country" value="Czech Republic" placeholder="Country" id="country" disabled="">
+									<p class="g">&nbsp;</p>
+								</div>
+                            	<div class="clear"></div>
+							</div>
+						</div>
+						<div class="row address_info">
+					<dl class="col col_2-1">
+							<dt>Khoảng cách tới Tamda:</dt>
+							<dd id="distance_n">--</dd>
+						</dl>
+						<dl class="col col_2-1">
+							<dt>Phí vận chuyển:</dt>
+							<dd id="ship_cost_n">--</dd>
+						</dl>
+						<div class="clear"></div>
+						</div>
+						<input type="hidden" name="shipping_current" value="--" id="new-delivery">
+                </fieldset>
+                </div>
+                </div>
+
+				<div class="row txt-frm block">
+				<div class="col col_2-1">
+            <label class="radio-inline">
+                <input type="radio" name="delivery" value="1" checked="checked" /><span class="like-radio"></span>
+                Giao tại cửa hàng
+            </label>
+			</div>
+			<div class="col col_2-1">
+            <label class="radio-inline">
+                <input type="radio" name="delivery" value="0" id="no_delivery" /><span class="like-radio"></span>
+                Đến lấy
+            </label>
+			</div>
+			<div class="clear"></div>
+        </div>
+			<div class="get-bill row txt-frm block">
+			<div class="col col_2-1">
+           
+				<select name="tip" id="input-tip">
+					<option value="0">BOA cho lái xe</option>
+					<option value="10">Boa 10 Kč</option>
+					<option value="20">Boa 20 Kč</option>
+					<option value="30">Boa 30 Kč</option>
+					<option value="40">Boa 40 Kč</option>
+					<option value="50">Boa 50 Kč</option>
+					<option value="60">Boa 60 Kč</option>
+					<option value="70">Boa 70 Kč</option>
+					<option value="80">Boa 80 Kč</option>
+					<option value="90">Boa 90 Kč</option>
+					<option value="100">Boa 100 Kč</option>
+				</select>
+			</div>
+			<div class="col col_2-1">
+            <label><input type="checkbox" name="filter" value=""><span class="like-checkbox"></span> Lấy hóa đơn</label>
+			</div>
+			<div class="clear"></div>
+        </div>
+			<div class="row txt-frm block">
+				<div class="col col_3-1">
+					<label>Phí vận chuyển</label>
+					<div class="price_d curr">100 Kč</div>
+				</div>
+				<div class="col col_3-1">
+					<label>Tiền hàng</label>
+					<div class="price_p curr">100 Kč</div>
+				</div>
+				<div class="col col_3-1">
+					<label>Tổng số tiền</label>
+					<div class="price_t curr">100 Kč</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="row border row txt-frm block">
+			<div class="col">
+            <label for="frm-orderForm-form-note">Note to Order</label>
+                <textarea tabindex="6" id="frm-orderForm-form-note" title="input a comment" placeholder="" name="note"></textarea>
+           
+			</div>
+        </div>
+        	<div class="form-bottom">
+            	<button class="primary-btn" onClick="confirm_box('do_checkout','','Bạn chắc chắn gửi đơn hàng chứ?','Chắc chắn','Xem lại')" type="button">Hoàn tất đơn hàng</button>
+            </div>
+			</form>
+		</div>
+		<div class="clear"></div>
+	</div>
+		</div>
+	
+</div>
+</div>
+<!-- /BODY -->
+<!-- FOOTER -->
+<div id="footer">
+	<div class="wrap">
+		<div class="row">
+			<div class="col col_3-1">
+				<ul class="contact">
+        			<li class="phone"><span><strong>+420 773 458 888</strong></span> <span>(Po - Pá&nbsp;10 - 23, So - Ne&nbsp;8.30 - 23)</span></li>
+        			<li class="mail"><span><strong><a href="mailto:tde@tamda.eu">tde@tamda.eu</a></strong></span> <span>Na e-mail se snažíme odpovídat okamžitě</span>
+        </li>
+				</ul>
+			</div>
+			<div class="col col_3-2">
+				<div class="row table">
+					<div class="col col_3-1">
+						<h5>My Account</h5>
+						<ul>
+						  <li><a title="My Account" href="http://dev.tamda.eu/index.php?route=account/account">My Account</a></li>
+						  <li><a title="Order History" href="http://dev.tamda.eu/index.php?route=account/order">Order History</a></li>
+						  <li><a title="Wish List" href="http://dev.tamda.eu/index.php?route=account/wishlist">Wish List</a></li>
+						  <li><a title="Newsletter" href="http://dev.tamda.eu/index.php?route=account/newsletter">Newsletter</a></li>
+						</ul>
+					</div>
+					<div class="col col_3-1">
+						<h5>Customer Service</h5>
+						<ul>
+						  <li><a title="Contact Us" href="http://dev.tamda.eu/index.php?route=information/contact">Contact Us</a></li>
+						  <li><a title="Returns" href="http://dev.tamda.eu/index.php?route=account/return/add">Returns</a></li>
+						  <li><a title="Site Map" href="http://dev.tamda.eu/index.php?route=information/sitemap">Site Map</a></li>
+						</ul>
+					</div>
+					<div class="col col_3-1" style="width:280px;">
+						<div class="fb-page" data-href="https://www.facebook.com/tamda.eu" data-width="280" data-height="224" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/tamda.eu"><a href="https://www.facebook.com/tamda.eu">tamda.eu</a></blockquote></div></div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+<!-- /FOOTER -->
+
+<!-- /NOTIFICATION -->
+<div id="notification">
+	<div class="wrap">
+		<div id="notification-msg"></div>
+		<button onClick="close_ntf()" class="close">Close</button>
+	</div>
+</div>
+<div id="inline-error"></div>
+<div id="temp"></div>
+</div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=1428992770730900";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</body>
+</html>

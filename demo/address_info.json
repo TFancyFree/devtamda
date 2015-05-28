@@ -1,0 +1,6 @@
+{
+	"id":1,
+	"delivery":11,
+	"distance":13,
+	"content":"<div class=\"address_info txt-frm\"><div class=\"row\"><dl class=\"col col_2-1\"><dt>Tên:</dt><dd>Tên ABC</dd></dl><dl class=\"col col_2-1\"><dt>Telephone:</dt><dd>+84933459044</dd></dl><div class=\"clear\"></div></div><dl><dt>Địa chỉ:</dt><dd>Libušská 319/126, Praha - Písnice, Praha 4, Praha, Czech Republic</dd></dl><div class=\"row\"><dl class=\"col col_2-1\"><dt>Khoảng cách tới Tamda:</dt><dd>13km</dd></dl><dl class=\"col col_2-1\"><dt>Phí vận chuyển:</dt><dd>12 Kč</dd></dl><div class=\"clear\"></div></div></div>"
+}
