@@ -12,7 +12,7 @@
 <script type="text/javascript" src="js/global.js"></script>
 <script type="text/javascript" src="js/cart.js"></script>
 </head>
-<body class="home">
+<body class="home prdincart">
 <!--
 body class:
 	home
@@ -28,28 +28,371 @@ body class:
 		<div id="logo">
 			<h1><a href="index.html" title=""><img src="images/logo.png" title="" alt="" /></a></h1>
 		</div>
-		<div id="cart" class="prdincart">
+		<div id="cart_pos"></div>
+		<div id="cart" data-total="3000" data-delivery="100" data-free-delivery="10000">
 			<div class="header">
 				<h6>Cart<span>17</span></h6>
 				<p><b>$26,250.00</b>
-				<a href="index.php?route=checkout/cart" class="button">Order</a>
+				<a href="checkout.html" class="button">Order</a>
 				</p>
 			</div>
 			<div class="cart-dt">
 				<div class="items">
-					<ul>
-						<li>
-							<div class="thumb"><a href="#" title=""><img alt="" src="http://dev.tamda.eu/image/cache/catalog/demo/ipod_shuffle_3-47x47.jpg"></a></div>
-							<div class="info">
-								<h3><a href="#"></a></h3>
-							</div>
-						</li>
-					</ul>
+					<ul class="products list">
+				<li class="product_1212 soldout">
+				<!-- class:
+							product_[id]
+							soldout	//hết hàng
+							incart	//có trong giỏ hàng
+							faved	//đãe thích
+				-->
+					<div class="inner">
+									<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+									<div class="badge new">New</div>
+									</div>
+									<div class="info">
+										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+										<div class="desc">
+										<div class="add2cart update-cart">
+											<p>Hết hàng</p>
+										</div>
+										</div>
+									</div>
+									
+									<div class="badge discount">20%</div>
+									<a href="demo/fav.html" class="badge fav ajax">&hearts;</a>
+									<a href="demo/remove.json?id=12" class="remove ajax">&times;</a>
+									<div class="clear"></div>
+								</div>
+				</li>
+				<li class="product_1212 soldout">
+				<!-- class:
+							product_[id]
+							soldout	//hết hàng
+							incart	//có trong giỏ hàng
+							faved	//đãe thích
+				-->
+					<div class="inner">
+									<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+									<div class="badge new">New</div>
+									</div>
+									<div class="info">
+										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+										<div class="desc">
+										<div class="add2cart update-cart">
+											<p>Hết hàng</p>
+										</div>
+										</div>
+									</div>
+									
+									<div class="badge discount">20%</div>
+									<a href="demo/fav.html" class="badge fav ajax">&hearts;</a>
+									<a href="demo/remove.json?id=12" class="remove ajax">&times;</a>
+									<div class="clear"></div>
+								</div>
+				</li>			
+				<li class="product_1212">
+				<!-- class:
+							product_[id]
+							soldout	//hết hàng
+							incart	//có trong giỏ hàng
+							faved	//đãe thích
+				-->
+					<div class="inner">
+									<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+									<div class="badge new">New</div>
+									</div>
+									<div class="info">
+										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+										<div class="desc">
+										<div class="add2cart update-cart">
+										<form class="add2cart-form updatecart-form" action="demo/ajax_add2cart.json" method="post">
+										<span class="qty">
+											<button type="button">-</button>
+											<input autocomplete="off" data-max-amount="1200" data-min-amount="10" type="text" name="quantity-update" value="30" data-step-amount="10" data-incart="30" data-price="15.9" />
+											<button type="button">+</button>
+										</span>
+										<input type="hidden" name="product-id" value="12"/>
+<input type="hidden" name="action" value="update"/>
+										<button class="button button-save-cart" type="submit">Lưu</button>
+										</form>
+										<div class="price">&times; <span class="n">30 Kč</span></div>
+										<div class="price_tt"><span class="n">30</span> Kč</div>
+										</div>
+										</div>
+									</div>
+									
+									<div class="badge discount">20%</div>
+									<a href="demo/fav.html" class="badge fav ajax">&hearts;</a>
+									<a href="demo/remove.json?id=12" class="remove ajax">&times;</a>
+									<div class="clear"></div>
+								</div>
+				</li>
+				<li class="product_1212">
+				<!-- class:
+							product_[id]
+							soldout	//hết hàng
+							incart	//có trong giỏ hàng
+							faved	//đãe thích
+				-->
+					<div class="inner">
+									<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+									<div class="badge new">New</div>
+									</div>
+									<div class="info">
+										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+										<div class="desc">
+										<div class="add2cart update-cart">
+										<form class="add2cart-form updatecart-form" action="demo/ajax_add2cart.json" method="post">
+										<span class="qty">
+											<button type="button">-</button>
+											<input autocomplete="off" data-max-amount="1200" data-min-amount="10" type="text" name="quantity-update" value="30" data-step-amount="10" data-incart="30" data-price="15.9" />
+											<button type="button">+</button>
+										</span>
+										<input type="hidden" name="product-id" value="12"/>
+<input type="hidden" name="action" value="update"/>
+										<button class="button button-save-cart" type="submit">Lưu</button>
+										</form>
+										<div class="price">&times; <span class="n">30 Kč</span></div>
+										<div class="price_tt"><span class="n">30</span> Kč</div>
+										</div>
+										</div>
+									</div>
+									
+									<div class="badge discount">20%</div>
+									<a href="demo/fav.html" class="badge fav ajax">&hearts;</a>
+									<a href="demo/remove.json?id=12" class="remove ajax">&times;</a>
+									<div class="clear"></div>
+								</div>
+				</li>
+				<li class="product_1212">
+				<!-- class:
+							product_[id]
+							soldout	//hết hàng
+							incart	//có trong giỏ hàng
+							faved	//đãe thích
+				-->
+					<div class="inner">
+									<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+									<div class="badge new">New</div>
+									</div>
+									<div class="info">
+										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+										<div class="desc">
+										<div class="add2cart update-cart">
+										<form class="add2cart-form updatecart-form" action="demo/ajax_add2cart.json" method="post">
+										<span class="qty">
+											<button type="button">-</button>
+											<input autocomplete="off" data-max-amount="1200" data-min-amount="10" type="text" name="quantity-update" value="30" data-step-amount="10" data-incart="30" data-price="15.9" />
+											<button type="button">+</button>
+										</span>
+										<input type="hidden" name="product-id" value="12"/>
+<input type="hidden" name="action" value="update"/>
+										<button class="button button-save-cart" type="submit">Lưu</button>
+										</form>
+										<div class="price">&times; <span class="n">30 Kč</span></div>
+										<div class="price_tt"><span class="n">30</span> Kč</div>
+										</div>
+										</div>
+									</div>
+									
+									<div class="badge discount">20%</div>
+									<a href="demo/fav.html" class="badge fav ajax">&hearts;</a>
+									<a href="demo/remove.json?id=12" class="remove ajax">&times;</a>
+									<div class="clear"></div>
+								</div>
+				</li>
+				<li class="product_1212">
+				<!-- class:
+							product_[id]
+							soldout	//hết hàng
+							incart	//có trong giỏ hàng
+							faved	//đãe thích
+				-->
+					<div class="inner">
+									<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+									<div class="badge new">New</div>
+									</div>
+									<div class="info">
+										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+										<div class="desc">
+										<div class="add2cart update-cart">
+										<form class="add2cart-form updatecart-form" action="demo/ajax_add2cart.json" method="post">
+										<span class="qty">
+											<button type="button">-</button>
+											<input autocomplete="off" data-max-amount="1200" data-min-amount="10" type="text" name="quantity-update" value="30" data-step-amount="10" data-incart="30" data-price="15.9" />
+											<button type="button">+</button>
+										</span>
+										<input type="hidden" name="product-id" value="12"/>
+<input type="hidden" name="action" value="update"/>
+										<button class="button button-save-cart" type="submit">Lưu</button>
+										</form>
+										<div class="price">&times; <span class="n">30 Kč</span></div>
+										<div class="price_tt"><span class="n">30</span> Kč</div>
+										</div>
+										</div>
+									</div>
+									
+									<div class="badge discount">20%</div>
+									<a href="demo/fav.html" class="badge fav ajax">&hearts;</a>
+									<a href="demo/remove.json?id=12" class="remove ajax">&times;</a>
+									<div class="clear"></div>
+								</div>
+				</li>
+				<li class="product_1212">
+				<!-- class:
+							product_[id]
+							soldout	//hết hàng
+							incart	//có trong giỏ hàng
+							faved	//đãe thích
+				-->
+					<div class="inner">
+									<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+									<div class="badge new">New</div>
+									</div>
+									<div class="info">
+										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+										<div class="desc">
+										<div class="add2cart update-cart">
+										<form class="add2cart-form updatecart-form" action="demo/ajax_add2cart.json" method="post">
+										<span class="qty">
+											<button type="button">-</button>
+											<input autocomplete="off" data-max-amount="1200" data-min-amount="10" type="text" name="quantity-update" value="30" data-step-amount="10" data-incart="30" data-price="15.9" />
+											<button type="button">+</button>
+										</span>
+										<input type="hidden" name="product-id" value="12"/>
+<input type="hidden" name="action" value="update"/>
+										<button class="button button-save-cart" type="submit">Lưu</button>
+										</form>
+										<div class="price">&times; <span class="n">30 Kč</span></div>
+										<div class="price_tt"><span class="n">30</span> Kč</div>
+										</div>
+										</div>
+									</div>
+									
+									<div class="badge discount">20%</div>
+									<a href="demo/fav.html" class="badge fav ajax">&hearts;</a>
+									<a href="demo/remove.json?id=12" class="remove ajax">&times;</a>
+									<div class="clear"></div>
+								</div>
+				</li>
+				<li class="product_1212">
+				<!-- class:
+							product_[id]
+							soldout	//hết hàng
+							incart	//có trong giỏ hàng
+							faved	//đãe thích
+				-->
+					<div class="inner">
+									<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+									<div class="badge new">New</div>
+									</div>
+									<div class="info">
+										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+										<div class="desc">
+										<div class="add2cart update-cart">
+										<form class="add2cart-form updatecart-form" action="demo/ajax_add2cart.json" method="post">
+										<span class="qty">
+											<button type="button">-</button>
+											<input autocomplete="off" data-max-amount="1200" data-min-amount="10" type="text" name="quantity-update" value="30" data-step-amount="10" data-incart="30" data-price="15.9" />
+											<button type="button">+</button>
+										</span>
+										<input type="hidden" name="product-id" value="12"/>
+<input type="hidden" name="action" value="update"/>
+										<button class="button button-save-cart" type="submit">Lưu</button>
+										</form>
+										<div class="price">&times; <span class="n">30 Kč</span></div>
+										<div class="price_tt"><span class="n">30</span> Kč</div>
+										</div>
+										</div>
+									</div>
+									
+									<div class="badge discount">20%</div>
+									<a href="demo/fav.html" class="badge fav ajax">&hearts;</a>
+									<a href="demo/remove.json?id=12" class="remove ajax">&times;</a>
+									<div class="clear"></div>
+								</div>
+				</li>
+				<li class="product_1212">
+				<!-- class:
+							product_[id]
+							soldout	//hết hàng
+							incart	//có trong giỏ hàng
+							faved	//đãe thích
+				-->
+					<div class="inner">
+									<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+									<div class="badge new">New</div>
+									</div>
+									<div class="info">
+										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+										<div class="desc">
+										<div class="add2cart update-cart">
+										<form class="add2cart-form updatecart-form" action="demo/ajax_add2cart.json" method="post">
+										<span class="qty">
+											<button type="button">-</button>
+											<input autocomplete="off" data-max-amount="1200" data-min-amount="10" type="text" name="quantity-update" value="30" data-step-amount="10" data-incart="30" data-price="15.9" />
+											<button type="button">+</button>
+										</span>
+										<input type="hidden" name="product-id" value="12"/>
+<input type="hidden" name="action" value="update"/>
+										<button class="button button-save-cart" type="submit">Lưu</button>
+										</form>
+										<div class="price">&times; <span class="n">30 Kč</span></div>
+										<div class="price_tt"><span class="n">30</span> Kč</div>
+										</div>
+										</div>
+									</div>
+									
+									<div class="badge discount">20%</div>
+									<a href="demo/fav.html" class="badge fav ajax">&hearts;</a>
+									<a href="demo/remove.json?id=12" class="remove ajax">&times;</a>
+									<div class="clear"></div>
+								</div>
+				</li>
+				<li class="product_1212">
+				<!-- class:
+							product_[id]
+							soldout	//hết hàng
+							incart	//có trong giỏ hàng
+							faved	//đãe thích
+				-->
+					<div class="inner">
+									<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
+									<div class="badge new">New</div>
+									</div>
+									<div class="info">
+										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
+										<div class="desc">
+										<div class="add2cart update-cart">
+										<form class="add2cart-form updatecart-form" action="demo/ajax_add2cart.json" method="post">
+										<span class="qty">
+											<button type="button">-</button>
+											<input autocomplete="off" data-max-amount="1200" data-min-amount="10" type="text" name="quantity-update" value="30" data-step-amount="10" data-incart="30" data-price="15.9" />
+											<button type="button">+</button>
+										</span>
+										<input type="hidden" name="product-id" value="12"/>
+<input type="hidden" name="action" value="update"/>
+										<button class="button button-save-cart" type="submit">Lưu</button>
+										</form>
+										<div class="price">&times; <span class="n">30 Kč</span></div>
+										<div class="price_tt"><span class="n">30</span> Kč</div>
+										</div>
+										</div>
+									</div>
+									
+									<div class="badge discount">20%</div>
+									<a href="demo/fav.html" class="badge fav ajax">&hearts;</a>
+									<a href="demo/remove.json?id=12" class="remove ajax">&times;</a>
+									<div class="clear"></div>
+								</div>
+				</li>
+			</ul>
 				</div>
-				<div class="footer">
+				<div class="footer bar">
 					<div class="sum">
-						<p class="delivery"><i></i> <strong>$94,076.80</strong></p>
-						<p class="total"><span>Total</span> <strong>$94,076.80</strong></p>
+						<p class="delivery"><i></i> <strong class="cart_delivery"><span class="n curr"></span></strong></p>
+						<p class="sum_p"><span>Tiền hàng</span> <strong class="cart_price"><span class="n curr">3100 Kč</span></strong></p>
 					</div>
 					<a href="checkout.html" class="button">Order</a>		
 					<div class="tips deliveryUpsell">

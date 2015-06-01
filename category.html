@@ -12,7 +12,9 @@
 <script type="text/javascript" src="js/perfect-scrollbar.jquery.min.js"></script>
 <script type="text/javascript" src="js/global.js"></script>
 <script type="text/javascript" src="js/cart.js"></script>
+<script type="text/javascript" src="js/jquery.nouislider.min.js"></script>
 <script type="text/javascript" src="js/product_list.js"></script>
+<link rel="stylesheet" type="text/css" href="jquery.nouislider.css">
 </head>
 <body class="product-list">
 <!--
@@ -30,6 +32,7 @@ body class:
 		<div id="logo">
 			<h1><a href="index.html" title=""><img src="images/logo.png" title="" alt="" /></a></h1>
 		</div>
+		<div id="cart_pos"></div>
 		<div id="cart" data-total="3000" data-delivery="100" data-free-delivery="10000">
 			<div class="header">
 				<h6>Cart Empty</h6>
@@ -681,6 +684,7 @@ thích</span></a>
 <div id="body">
 	<div class="wrap">
 		<div id="sidebar">
+			<div class="widget">
 			<div class="header">
 				<p class="r">
 				<button>Show all</button>
@@ -706,6 +710,7 @@ thích</span></a>
 				</li>
 				
 			</ul>
+			
 			<div id="l-filter-loc"></div>
 			<div id="l-filter">
 				<div class="filter_mnft filter_box" id="snippet-brands">
@@ -773,8 +778,51 @@ thích</span></a>
 				</div>
 			</div>
 		</div>
+		</div>
 		<div class="content" id="right">
+			<div class="tips top">
+				Nếu gửi đơn hàng bây giờ, quý khách sẽ nhận được hàng trong ngày xxx
+			</div>
+			<div class="ttitle">
+			
 			<h1>Drogerie</h1>
+			<div class="right">
+			<div class="filter_box filter_price" id="snippet-price">
+			
+			<div id="filter_price">
+				<p>Giá:</p> <p id="filter_price_min"></p><div id="price-range" data-onchange-href="demo/product_list_price.json"></div><p id="filter_price_max"></p>
+				</div>
+				
+				<script type="text/javascript">
+				jQuery(function(){
+					$("#price-range").noUiSlider({
+						start: [50, 500],
+						range: {
+							'min': [50],
+							'max': [500]
+							
+						},
+						step: 1,
+						behaviour: 'drag-tap',
+						connect: true,
+						format: {
+							  to: function ( value ) {
+								return parseInt(value);
+							  },
+							  from: function ( value ) {
+								return parseInt(value);
+							  }
+						}
+						
+					});
+					$("#filter_price_min").text($("#price-range").val()[0]+' Kč');
+					$("#filter_price_max").text($("#price-range").val()[1]+' Kč');
+					
+				});
+				</script>
+			</div>
+			</div>
+			</div>
 			<div id="content-product">	
 			<div class="filter">
 				<ul>
@@ -855,9 +903,17 @@ thích</span></a>
 									<div class="info">
 										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
 										<div class="desc">
+										<dl>
+                    						<dt>EAN:</dt>
+											<dd>8426617113155</dd>
+										</dl>
+										<dl>
+											<dt>KS/KRT:</dt>
+											<dd>30</dd>
+										</dl>
 										<dl class="price">
 											<dt>Giá:</dt>
-											<dd><strong>$15.90</strong> <del>$17.90</del></dd>
+											<dd><strong class="curr">15.90 Kc</strong> <del class="curr">17.90 Kc</del></dd>
 										</dl>
 										<div class="add2cart">
 										<form class="add2cart-form" action="demo/ajax_add2cart.json" method="post">
@@ -891,9 +947,17 @@ thích</span></a>
 									<div class="info">
 										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
 										<div class="desc">
+										<dl>
+                    						<dt>EAN:</dt>
+											<dd>8426617113155</dd>
+										</dl>
+										<dl>
+											<dt>KS/KRT:</dt>
+											<dd>30</dd>
+										</dl>
 										<dl class="price">
 											<dt>Giá:</dt>
-											<dd><strong>$15.90</strong> <del>$17.90</del></dd>
+											<dd><strong class="curr">15.90 Kc</strong> <del class="curr">17.90 Kc</del></dd>
 										</dl>
 										<div class="add2cart">
 										<form class="add2cart-form" action="demo/ajax_add2cart.json" method="post">
@@ -927,12 +991,28 @@ thích</span></a>
 									<div class="info">
 										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
 										<div class="desc">
+										<dl>
+                    						<dt>EAN:</dt>
+											<dd>8426617113155</dd>
+										</dl>
+										<dl>
+											<dt>KS/KRT:</dt>
+											<dd>30</dd>
+										</dl>
 										<dl class="price">
 											<dt>Giá:</dt>
-											<dd>&nbsp;</dd>
+											<dd><strong class="curr">15.90 Kc</strong> <del class="curr">17.90 Kc</del></dd>
 										</dl>
 										<div class="add2cart">
-											<p>Hết hàng</p>
+										<form class="add2cart-form" action="demo/ajax_add2cart.json" method="post">
+										<span class="qty">
+											<button type="button">-</button>
+											<input autocomplete="off" data-max-amount="1200" data-min-amount="10" type="text" name="quantity" value="10" data-step-amount="10" />
+											<button type="button">+</button>
+										</span>
+										<input type="hidden" name="product-id" value="12"/>
+										<button class="button button-cart" type="submit">Add to cart</button>
+										</form>
 										</div>
 										</div>
 									</div>
@@ -953,9 +1033,17 @@ thích</span></a>
 									<div class="info">
 										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
 										<div class="desc">
+										<dl>
+                    						<dt>EAN:</dt>
+											<dd>8426617113155</dd>
+										</dl>
+										<dl>
+											<dt>KS/KRT:</dt>
+											<dd>30</dd>
+										</dl>
 										<dl class="price">
 											<dt>Giá:</dt>
-											<dd><strong>$15.90</strong> <del>$17.90</del></dd>
+											<dd><strong class="curr">15.90 Kc</strong> <del class="curr">17.90 Kc</del></dd>
 										</dl>
 										<div class="add2cart">
 										<form class="add2cart-form" action="demo/ajax_add2cart.json" method="post">
@@ -989,9 +1077,17 @@ thích</span></a>
 									<div class="info">
 										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
 										<div class="desc">
+										<dl>
+                    						<dt>EAN:</dt>
+											<dd>8426617113155</dd>
+										</dl>
+										<dl>
+											<dt>KS/KRT:</dt>
+											<dd>30</dd>
+										</dl>
 										<dl class="price">
 											<dt>Giá:</dt>
-											<dd><strong>$15.90</strong> <del>$17.90</del></dd>
+											<dd><strong class="curr">15.90 Kc</strong> <del class="curr">17.90 Kc</del></dd>
 										</dl>
 										<div class="add2cart">
 										<form class="add2cart-form" action="demo/ajax_add2cart.json" method="post">
@@ -1025,9 +1121,17 @@ thích</span></a>
 									<div class="info">
 										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
 										<div class="desc">
+										<dl>
+                    						<dt>EAN:</dt>
+											<dd>8426617113155</dd>
+										</dl>
+										<dl>
+											<dt>KS/KRT:</dt>
+											<dd>30</dd>
+										</dl>
 										<dl class="price">
 											<dt>Giá:</dt>
-											<dd><strong>$15.90</strong> <del>$17.90</del></dd>
+											<dd><strong class="curr">15.90 Kc</strong> <del class="curr">17.90 Kc</del></dd>
 										</dl>
 										<div class="add2cart">
 										<form class="add2cart-form" action="demo/ajax_add2cart.json" method="post">
@@ -1061,9 +1165,17 @@ thích</span></a>
 									<div class="info">
 										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
 										<div class="desc">
+										<dl>
+                    						<dt>EAN:</dt>
+											<dd>8426617113155</dd>
+										</dl>
+										<dl>
+											<dt>KS/KRT:</dt>
+											<dd>30</dd>
+										</dl>
 										<dl class="price">
 											<dt>Giá:</dt>
-											<dd><strong>$15.90</strong> <del>$17.90</del></dd>
+											<dd><strong class="curr">15.90 Kc</strong> <del class="curr">17.90 Kc</del></dd>
 										</dl>
 										<div class="add2cart">
 										<form class="add2cart-form" action="demo/ajax_add2cart.json" method="post">
@@ -1097,9 +1209,17 @@ thích</span></a>
 									<div class="info">
 										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
 										<div class="desc">
+										<dl>
+                    						<dt>EAN:</dt>
+											<dd>8426617113155</dd>
+										</dl>
+										<dl>
+											<dt>KS/KRT:</dt>
+											<dd>30</dd>
+										</dl>
 										<dl class="price">
 											<dt>Giá:</dt>
-											<dd><strong>$15.90</strong> <del>$17.90</del></dd>
+											<dd><strong class="curr">15.90 Kc</strong> <del class="curr">17.90 Kc</del></dd>
 										</dl>
 										<div class="add2cart">
 										<form class="add2cart-form" action="demo/ajax_add2cart.json" method="post">
@@ -1133,9 +1253,17 @@ thích</span></a>
 									<div class="info">
 										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
 										<div class="desc">
+										<dl>
+                    						<dt>EAN:</dt>
+											<dd>8426617113155</dd>
+										</dl>
+										<dl>
+											<dt>KS/KRT:</dt>
+											<dd>30</dd>
+										</dl>
 										<dl class="price">
 											<dt>Giá:</dt>
-											<dd><strong>$15.90</strong> <del>$17.90</del></dd>
+											<dd><strong class="curr">15.90 Kc</strong> <del class="curr">17.90 Kc</del></dd>
 										</dl>
 										<div class="add2cart">
 										<form class="add2cart-form" action="demo/ajax_add2cart.json" method="post">
@@ -1169,9 +1297,17 @@ thích</span></a>
 									<div class="info">
 										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
 										<div class="desc">
+										<dl>
+                    						<dt>EAN:</dt>
+											<dd>8426617113155</dd>
+										</dl>
+										<dl>
+											<dt>KS/KRT:</dt>
+											<dd>30</dd>
+										</dl>
 										<dl class="price">
 											<dt>Giá:</dt>
-											<dd><strong>$15.90</strong> <del>$17.90</del></dd>
+											<dd><strong class="curr">15.90 Kc</strong> <del class="curr">17.90 Kc</del></dd>
 										</dl>
 										<div class="add2cart">
 										<form class="add2cart-form" action="demo/ajax_add2cart.json" method="post">
@@ -1205,9 +1341,17 @@ thích</span></a>
 									<div class="info">
 										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
 										<div class="desc">
+										<dl>
+                    						<dt>EAN:</dt>
+											<dd>8426617113155</dd>
+										</dl>
+										<dl>
+											<dt>KS/KRT:</dt>
+											<dd>30</dd>
+										</dl>
 										<dl class="price">
 											<dt>Giá:</dt>
-											<dd><strong>$15.90</strong> <del>$17.90</del></dd>
+											<dd><strong class="curr">15.90 Kc</strong> <del class="curr">17.90 Kc</del></dd>
 										</dl>
 										<div class="add2cart">
 										<form class="add2cart-form" action="demo/ajax_add2cart.json" method="post">
@@ -1241,9 +1385,17 @@ thích</span></a>
 									<div class="info">
 										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
 										<div class="desc">
+										<dl>
+                    						<dt>EAN:</dt>
+											<dd>8426617113155</dd>
+										</dl>
+										<dl>
+											<dt>KS/KRT:</dt>
+											<dd>30</dd>
+										</dl>
 										<dl class="price">
 											<dt>Giá:</dt>
-											<dd><strong>$15.90</strong> <del>$17.90</del></dd>
+											<dd><strong class="curr">15.90 Kc</strong> <del class="curr">17.90 Kc</del></dd>
 										</dl>
 										<div class="add2cart">
 										<form class="add2cart-form" action="demo/ajax_add2cart.json" method="post">

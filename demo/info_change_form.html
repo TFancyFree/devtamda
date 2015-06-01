@@ -1,0 +1,39 @@
+<script>
+	$(function(){
+		$('.birthdaypicker').birthdaypicker();
+	});
+</script>
+<form id="edit_info" class="ajax validate full" method="post" action="demo/info_change.html">
+						<div class="row">
+						<div class="col col_2-1">
+							<label for="e_name">Tên:</label>
+							<input type="text" name="name" value="Nguyễn Đình Dũng" id="e_name" class="required" />
+						</div>
+						<div class="col col_2-1">
+							<label for="e_tel">Telephone:</label>
+							<input type="text" name="tel" value="+84933459044" id="e_tel" class="required" />
+						</div>
+						<div class="col col_2-1">
+							<label for="e_tel">Ngày sinh:</label>
+							<div class="row rowrow birthdaypicker">
+								<div class="col col_3-1"><input type="text" name="birth[date]" placeholder="Ngày" value="31"></div>
+								<div class="col col_3-1"><input type="text" name="birth[month]" placeholder="Tháng" value="12"></div>
+								<div class="col col_3-1"><input type="text" name="birth[year]" placeholder="Năm" value="1992"></div>
+							</div>
+						</div>
+						<div class="col col_2-1">
+							<label for="e_ico">ICO:</label>
+							<input type="text" name="ico" value="+84933459044" id="e_ico" class="required" />
+						</div>
+						<div class="col col_2-1">
+							<label for="e_ogn">Tên cửa hàng / công ty:</label>
+							<input type="text" name="ogn" value="Tamda s.r.o" id="e_ogn" class="required" />
+						</div>
+						<div class="col col_2-1">
+							<label for="e_ogn">Email:</label>
+							<input type="text" name="email" value="name@email.com" id="e_email" disabled="" class="disabled" />
+						</div>
+						</div>
+						<div class="clear"></div>
+							<div class="form-bottom"><button type="button" onClick="confirm_box('do_edit_info','','Bạn chắc chắn đổi thông tin không?','Chắc chắn','Xem lại')" class="primary-btn">Đổi thông tin</button> <button type="button" onClick="edit_info_close()">Hủy</button></div>
+							</form>

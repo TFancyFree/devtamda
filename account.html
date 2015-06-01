@@ -12,7 +12,7 @@
 <script type="text/javascript" src="js/perfect-scrollbar.jquery.min.js"></script>
 <script type="text/javascript" src="js/global.js"></script>
 <script type="text/javascript" src="js/cart.js"></script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
+<script type="text/javascript" src="js/form.js"></script>
 </head>
 <body>
 <!--
@@ -30,6 +30,7 @@ body class:
 		<div id="logo">
 			<h1><a href="index.html" title=""><img src="images/logo.png" title="" alt="" /></a></h1>
 		</div>
+		<div id="cart_pos"></div>
 		<div id="cart" data-total="3000" data-delivery="100" data-free-delivery="10000">
 			<div class="header">
 				<h6>Cart Empty</h6>
@@ -677,7 +678,7 @@ thích</span></a>
 	</div>
 </div>
 <!-- /HEADER -->
-<div id="breadcrumb">
+<div id="breadcrumb" class="aside">
 	<div class="wrap">
 		<div class="br-ct">
 			<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
@@ -695,299 +696,776 @@ thích</span></a>
 
 <!-- BODY -->
 <div id="body">
+
+<script type="text/javascript">
+function edit_info()
+{
+	edit_info_open();
+	$("#form_edit_info").addClass('form-enabled');
+	if($("#form_primary .form_ovl").length==0) $("#form_primary").append('<div class="form_ovl"></div>');
+	$("#form_primary button.edit-info").addClass('enabled');
+}
+function edit_info_open()
+{
+	if($("#form_edit_info").hasClass('form-enabled') === false)
+	{
+	$("#form_edit_info").html('Loading...')
+	$.ajax({
+		url: 'demo/info_change_form.html',
+		success: function(data)
+		{
+			$("#form_edit_info").html(data)
+		}
+	})
+	}
+}
+function edit_info_close()
+{
+	$("#form_edit_info").html('')
+	$("#form_edit_info").removeClass('form-enabled');
+	$("#form_primary .form_ovl").remove('');
+	$("#form_primary button.edit-info").removeClass('enabled');
+	error_input_clear($('#form_edit_info input'));
+}
+function change_password()
+{
+	$("#form_change_pw").addClass('form-enabled');
+	if($("#form_primary .form_ovl").length==0) $("#form_primary").append('<div class="form_ovl"></div>');
+	$("#form_primary button.change-password").addClass('enabled')
+}
+function change_password_close()
+{
+	$("#form_change_pw").removeClass('form-enabled');
+	$("#form_primary .form_ovl").remove('');
+	$("#form_primary button.change-password").removeClass('enabled');
+	$('#change_pw').trigger('reset');
+	error_input_clear($('#form_change_pw input'));
+}
+function do_change_pw()
+{
+	$('#change_pw').trigger('submit')
+}
+function do_edit_info()
+{
+	$('#edit_info').trigger('submit')
+}
+
+</script>
 	<div class="wrap">
 		<div id="sidebar">
+			<div class="widget">
+			<div class="header"><h3>My Account</h3></div>
 			<ul class="menu">
-				<li><a href="#">Overview</a></li>
+				<li class="current"><a href="account.htlm">Overview</a></li>
 				<li><a href="orders.html">My Orders</a></li>
-				<li><a href="recent.html">Recently Viewed Products</a></li>
-				<li><a href="address.html">My Shipping Address</a></li>
-				<li><a href="password.html">Change Password</a></li>
-			</ul>
-		</div>
-		<div id="right">
-			<div class="block">
-				<h2>Nguyễn Đình Dũng</h2>
-				<dl>
-					<dt>Telephone</dt>
-					<dd>+84933459044</dd>
-				</dl>
-				<dl>
-					<dt>Email</dt>
-					<dd>david.nguyen.cz@gmail.com</dd>
-				</dl>
-			</div>
-			<div class="block">
-				<h2>Recent Orders</h2>
-				<dl>
-					<dt>Telephone</dt>
-					<dd>+84933459044</dd>
-				</dl>
-				<dl>
-					<dt>Email</dt>
-					<dd>david.nguyen.cz@gmail.com</dd>
-				</dl>
-			</div>
-			<div class="block">
-				<h2>Recent View Products</h2>
-				<ul class="products">
-				<li class="product_1212">
-				<!-- class:
-							product_[id]
-							soldout	//hết hàng
-							incart	//có trong giỏ hàng
-							faved	//đãe thích
-				-->
-					<div class="inner">
-									<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
-									<div class="badge new">New</div>
-									</div>
-									<div class="info">
-										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
-										<div class="desc">
-										<dl>
-											<dt>EAN:</dt>
-											<dd>3607343587631</dd>
-										</dl>
-										<dl>
-											<dt>KS/KRT:</dt>
-											<dd>12</dd>
-										</dl>
-										<dl class="price">
-											<dt>Giá:</dt>
-											<dd><strong>$15.90</strong> <del>$17.90</del></dd>
-										</dl>
-										<div class="add2cart">
-										<form class="add2cart-form" action="demo/ajax_add2cart.json" method="post">
-										<span class="qty">
-											<button type="button">-</button>
-											<input autocomplete="off" data-max-amount="1200" data-min-amount="10" type="text" name="quantity" value="10" data-step-amount="10" />
-											<button type="button">+</button>
-										</span>
-										<input type="hidden" name="product-id" value="12"/>
-										<button class="button button-cart" type="submit">Add to cart</button>
-										</form>
-										</div>
-										</div>
-									</div>
-									<div class="basket">100</div>
-									<div class="badge discount">20%</div>
-									<a href="demo/fav.html" class="badge fav ajax">&hearts;</a>
-								</div>
-				</li>
-				<li class="product_1 incart">
-				<!-- class:
-							product_[id]
-							soldout	//hết hàng
-							incart	//có trong giỏ hàng
-							faved	//đãe thích
-				-->
-					<div class="inner">
-									<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
-									<div class="badge new">New</div>
-									</div>
-									<div class="info">
-										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
-										<div class="desc">
-										<dl>
-											<dt>EAN:</dt>
-											<dd>3607343587631</dd>
-										</dl>
-										<dl>
-											<dt>KS/KRT:</dt>
-											<dd>12</dd>
-										</dl>
-										<dl class="price">
-											<dt>Giá:</dt>
-											<dd><strong>$15.90</strong> <del>$17.90</del></dd>
-										</dl>
-										<div class="add2cart">
-										<form class="add2cart-form" action="demo/ajax_add2cart.json" method="post">
-										<span class="qty">
-											<button type="button">-</button>
-											<input autocomplete="off" data-max-amount="1200" data-min-amount="10" type="text" name="quantity" value="10" data-step-amount="10" />
-											<button type="button">+</button>
-										</span>
-										<input type="hidden" name="product-id" value="12"/>
-										<button class="button button-cart" type="submit">Add to cart</button>
-										</form>
-										</div>
-										</div>
-									</div>
-									<div class="basket">100</div>
-									<div class="badge discount">20%</div>
-									<a href="demo/fav.html" class="badge fav ajax">&hearts;</a>
-								</div>
-				</li>
-				<li class="product_1212 faved soldout">
-				<!-- class:
-							product_[id]
-							soldout	//hết hàng
-							incart	//có trong giỏ hàng
-							faved	//đãe thích
-				-->
-					<div class="inner">
-									<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
-									<div class="badge new">New</div>
-									</div>
-									<div class="info">
-										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
-										<div class="desc">
-										<dl>
-											<dt>EAN:</dt>
-											<dd>3607343587631</dd>
-										</dl>
-										<dl>
-											<dt>KS/KRT:</dt>
-											<dd>12</dd>
-										</dl>
-										<dl class="price">
-											<dt>Giá:</dt>
-											<dd>&nbsp;</dd>
-										</dl>
-										<div class="add2cart">
-											<p>Hết hàng</p>
-										</div>
-										</div>
-									</div>
-									<a href="demo/fav.html" class="badge fav ajax">&hearts;</a>
-								</div>
-				</li>
-				<li class="product_1212">
-				<!-- class:
-							product_[id]
-							soldout	//hết hàng
-							incart	//có trong giỏ hàng
-							faved	//đãe thích
-				-->
-					<div class="inner">
-									<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
-									<div class="badge new">New</div>
-									</div>
-									<div class="info">
-										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
-										<div class="desc">
-										<dl>
-											<dt>EAN:</dt>
-											<dd>3607343587631</dd>
-										</dl>
-										<dl>
-											<dt>KS/KRT:</dt>
-											<dd>12</dd>
-										</dl>
-										<dl class="price">
-											<dt>Giá:</dt>
-											<dd><strong>$15.90</strong> <del>$17.90</del></dd>
-										</dl>
-										<div class="add2cart">
-										<form class="add2cart-form" action="demo/ajax_add2cart.json" method="post">
-										<span class="qty">
-											<button type="button">-</button>
-											<input autocomplete="off" data-max-amount="1200" data-min-amount="10" type="text" name="quantity" value="10" data-step-amount="10" />
-											<button type="button">+</button>
-										</span>
-										<input type="hidden" name="product-id" value="12"/>
-										<button class="button button-cart" type="submit">Add to cart</button>
-										</form>
-										</div>
-										</div>
-									</div>
-									<div class="basket">100</div>
-									<div class="badge discount">20%</div>
-									<a href="demo/fav.html" class="badge fav ajax">&hearts;</a>
-								</div>
-				</li>
-				<li class="product_1212">
-				<!-- class:
-							product_[id]
-							soldout	//hết hàng
-							incart	//có trong giỏ hàng
-							faved	//đãe thích
-				-->
-					<div class="inner">
-									<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
-									<div class="badge new">New</div>
-									</div>
-									<div class="info">
-										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
-										<div class="desc">
-										<dl>
-											<dt>EAN:</dt>
-											<dd>3607343587631</dd>
-										</dl>
-										<dl>
-											<dt>KS/KRT:</dt>
-											<dd>12</dd>
-										</dl>
-										<dl class="price">
-											<dt>Giá:</dt>
-											<dd><strong>$15.90</strong> <del>$17.90</del></dd>
-										</dl>
-										<div class="add2cart">
-										<form class="add2cart-form" action="demo/ajax_add2cart.json" method="post">
-										<span class="qty">
-											<button type="button">-</button>
-											<input autocomplete="off" data-max-amount="1200" data-min-amount="10" type="text" name="quantity" value="10" data-step-amount="10" />
-											<button type="button">+</button>
-										</span>
-										<input type="hidden" name="product-id" value="12"/>
-										<button class="button button-cart" type="submit">Add to cart</button>
-										</form>
-										</div>
-										</div>
-									</div>
-									<div class="basket">100</div>
-									<div class="badge discount">20%</div>
-									<a href="demo/fav.html" class="badge fav ajax">&hearts;</a>
-								</div>
-				</li>
-				<li class="product_1212">
-				<!-- class:
-							product_[id]
-							soldout	//hết hàng
-							incart	//có trong giỏ hàng
-							faved	//đãe thích
-				-->
-					<div class="inner">
-									<div class="thumb"><a href="product.html" title=""><img src="http://dev.tamda.eu/image/cache/catalog/demo/sony_vaio_2-228x228.jpg" alt=""></a>
-									<div class="badge new">New</div>
-									</div>
-									<div class="info">
-										<h3 class="title"><a href="product.html" title="Tiêu đề">Tiêu đề Tiêu đề Tiêu đề Tiêu đề Tiêu đề</a></h3>
-										<div class="desc">
-										<dl>
-											<dt>EAN:</dt>
-											<dd>3607343587631</dd>
-										</dl>
-										<dl>
-											<dt>KS/KRT:</dt>
-											<dd>12</dd>
-										</dl>
-										<dl class="price">
-											<dt>Giá:</dt>
-											<dd><strong>$15.90</strong> <del>$17.90</del></dd>
-										</dl>
-										<div class="add2cart">
-										<form class="add2cart-form" action="demo/ajax_add2cart.json" method="post">
-										<span class="qty">
-											<button type="button">-</button>
-											<input autocomplete="off" data-max-amount="1200" data-min-amount="10" type="text" name="quantity" value="10" data-step-amount="10" />
-											<button type="button">+</button>
-										</span>
-										<input type="hidden" name="product-id" value="12"/>
-										<button class="button button-cart" type="submit">Add to cart</button>
-										</form>
-										</div>
-										</div>
-									</div>
-									<div class="basket">100</div>
-									<div class="badge discount">20%</div>
-									<a href="demo/fav.html" class="badge fav ajax">&hearts;</a>
-								</div>
-				</li>
+				<li><a href="address.html">Địa chỉ</a></li>
+				<li><a href="recent.html">Hàng đã đặt</a></li>
+				<li><a href="fav.html">Yêu thích</a></li>
 				
 			</ul>
 			</div>
+			<div class="widget">
+				<div class="header">
+                <h3>Thông tin hữu ích</h3> 
+            </div>
+            <ul class="menu">
+                                <li>
+                    <a href="/index.php?route=information/information&amp;information_id=19">Giới thiệu dịch vụ</a>
+                </li>
+                                <li>
+                    <a href="/index.php?route=information/information&amp;information_id=20">Hỏi &amp; Đáp</a>
+                </li>
+                                <li>
+                    <a href="/index.php?route=information/information&amp;information_id=21">Hướng dẫn cài đặt trình duyệt</a>
+                </li>
+                                <li>
+                    <a href="/index.php?route=information/information&amp;information_id=22">Hướng dẫn Đăng Ký</a>
+                </li>
+                                <li>
+                    <a href="/index.php?route=information/information&amp;information_id=23">Hướng dẫn đặt hàng</a>
+                </li>
+                                <li>
+                    <a href="/index.php?route=information/information&amp;information_id=24">Khiếu nại &amp; Thắc mắc</a>
+                </li>
+                                <li>
+                    <a href="/index.php?route=information/information&amp;information_id=3">Liên hệ đặt hàng</a>
+                </li>
+                                <li>
+                    <a href="/index.php?route=information/information&amp;information_id=25">Quyền riêng tư</a>
+                </li>
+                                <li>
+                    <a href="/index.php?route=information/information&amp;information_id=26">Tại sao chọn chúng tôi</a>
+                </li>
+                                <li>
+                    <a href="/index.php?route=information/information&amp;information_id=5">Điều khoản &amp; Dịch vụ</a>
+                </li>
+                            </ul>
+			</div>
+		</div>
+		<div id="right">
+			
+			<div class="ttitle">
+						<h1>Thông tin chung</h1>
+					</div>
+			<div class="row">
+				<div class="col col_2-1">
+					<div class="block info_simple bg form-absolute" id="form_primary">
+					<div class="title">
+						<div class="r">
+							<button onClick="change_password()" class="sm change-password">Đổi mật khẩu</button>
+							<button onClick="edit_info()" class="sm edit-info">Sửa thông tin</button>
+						</div>
+						<h6>Thông tin tài khoản</h6>
+					</div>
+					<div class="form_loc">
+					<div class="row" id="account_info_content">
+						<dl class="col col_2-1">
+							<dt>Tên:</dt>
+							<dd>Nguyễn Đình Dũng</dd>
+						</dl>
+						<dl class="col col_2-1">
+							<dt>Telephone:</dt>
+							<dd>+84933459044</dd>
+						</dl>
+						<dl class="col col_2-1">
+							<dt>Ngày sinh:</dt>
+							<dd>31/12/1980</dd>
+						</dl>
+						<dl class="col col_2-1">
+							<dt>ICO:</dt>
+							<dd>1212121212</dd>
+						</dl>
+						<dl class="col col_2-1">
+							<dt>Cửa hàng / công ty:</dt>
+							<dd>name@mail.com</dd>
+						</dl>
+						<dl class="col col_2-1">
+							<dt>Email:</dt>
+							<dd>name@mail.com</dd>
+						</dl>
+						<div class="clear"></div>
+						
+						<div class="form box" id="form_edit_info">
+						
+						</div>
+						<div class="form box" id="form_change_pw">
+							<div class="row">
+								<form action="demo/password_change.html" id="change_pw" class="ajax validate" method="post">
+								<div class="col col_2-1 txt-frm">
+									<label for="e_pw_new">Mật khẩu mới</label>
+									<input type="password" id="e_pw_new" value="" name="pw_new" class="required" />
+									<p class="g"></p>
+								</div>
+								<div class="col col_2-1 txt-frm">
+									<label for="e_pw_new_c">Xác nhận lại mật khẩu mới</label>
+									<input type="password" id="e_pw_new_c" value="" name="pw_new_c" class="required" />
+									<p class="g"></p>
+								</div>
+								<div class="col col_2-1 txt-frm">
+									<label for="e_pw_new">Mật khẩu cũ</label>
+									<input type="password" id="e_pw_old" value="" name="pw_old" class="required" />
+									<p class="g"></p>
+								</div>
+								<div class="col col_2-1 txt-frm">
+									<label style="float:none">&nbsp;</label>
+									<button type="button" onClick="confirm_box('do_change_pw','','Bạn chắc chắn đổi mật khẩu chứ?','Chắc chắn','Xem lại')">Đổi mật khẩu</button> <button type="button" onClick="change_password_close()">Hủy</button>
+									<p class="g"></p>
+								</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+					<dl class="col">
+						
+						<dt>Địa chỉ mặc định <a href="address.html" title="Sửa địa chỉ" class="button sm">Sửa</a></dt>
+					
+						
+						<dd>Libušská 319/126</dd>
+					</dl>
+					
+					<div class="clear"></div>
+					</div>
+					</div>
+					<div class="row">
+					<dl class="col">
+						
+						<dt>Nhận thông báo akce</dt>
+					
+						
+						<dd id="subscribe_email">Chưa
+							<form class="ajax validate inline" action="demo/subscribe_email.html">
+								
+								<input class="required" id="subscribe_email_i" type="text" value="name@email.com" /> <button type="submit">Theo dõi</button>
+								<p class="g"></p>
+							</form>
+						</dd>
+					</dl>
+					
+					<div class="clear"></div>
+					</div>
+					</div>
+				</div>
+				<div class="col col_2-1 info_1 price_l">
+					<div class="row rowrow">
+						<div class="col col_2-1">
+							<div class="bg">
+							<h6>Tổng tiền đặt trong tháng 1</h6>
+							<p class="price"><span class="curr">1000 Kc</span></p>
+							</div>
+							<div class="bg">
+							<h6>Tổng tiền giao trong tháng 1</h6>
+							<p class="price"><span class="curr">999 Kc</span></p>
+							</div>
+						</div>
+						<div class="col col_2-1 chart-ct">
+						
+						<script>$(function(){
+  $("#doughnutChart").drawDoughnutChart([
+    { title: "Tiền giao trong tháng 1: 999 Kc",         value : 200,  color: "#008746" },
+    { title: "", value:  100,   color: "#ccc" },
+	
+  ],{forceTOTAL: '50', segmentStrokeWidth : 0,segmentShowStroke : false, baseOffset: 0,baseColor: "#ccc"});
+});
+/*!
+ * jquery.drawDoughnutChart.js
+ * Version: 0.4.1(Beta)
+ * Inspired by Chart.js(http://www.chartjs.org/)
+ *
+ * Copyright 2014 hiro
+ * https://github.com/githiro/drawDoughnutChart
+ * Released under the MIT license.
+ * 
+ */
+;(function($, undefined) {
+  $.fn.drawDoughnutChart = function(data, options) {
+    var $this = this,
+      W = $this.width(),
+      H = $this.height(),
+      centerX = W/2,
+      centerY = H/2,
+      cos = Math.cos,
+      sin = Math.sin,
+      PI = Math.PI,
+      settings = $.extend({
+        segmentShowStroke : true,
+        segmentStrokeColor : "#0C1013",
+        segmentStrokeWidth : 1,
+        baseColor: "rgba(0,0,0,0.1)",
+        baseOffset: 4,
+        edgeOffset : 10,//offset from edge of $this
+        percentageInnerCutout : 75,
+        animation : true,
+        animationSteps : 90,
+        animationEasing : "easeInOutExpo",
+        animateRotate : true,
+        tipOffsetX: -8,
+        tipOffsetY: -45,
+        tipClass: "doughnutTip",
+        summaryClass: "doughnutSummary",
+        summaryTitle: "ĐÁP ỨNG",
+        summaryTitleClass: "doughnutSummaryTitle",
+        summaryNumberClass: "doughnutSummaryNumber",
+		forceTOTAL: '',
+        beforeDraw: function() {  },
+        afterDrawed : function() {  },
+        onPathEnter : function(e,data) {  },
+        onPathLeave : function(e,data) {  }
+      }, options),
+      animationOptions = {
+        linear : function (t) {
+          return t;
+        },
+        easeInOutExpo: function (t) {
+          var v = t<.5 ? 8*t*t*t*t : 1-8*(--t)*t*t*t;
+          return (v>1) ? 1 : v;
+        }
+      },
+      requestAnimFrame = function() {
+        return window.requestAnimationFrame ||
+          window.webkitRequestAnimationFrame ||
+          window.mozRequestAnimationFrame ||
+          window.oRequestAnimationFrame ||
+          window.msRequestAnimationFrame ||
+          function(callback) {
+            window.setTimeout(callback, 1000 / 60);
+          };
+      }();
+
+    settings.beforeDraw.call($this);
+
+    var $svg = $('<svg width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H + '" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></svg>').appendTo($this),
+        $paths = [],
+        easingFunction = animationOptions[settings.animationEasing],
+        doughnutRadius = Min([H / 2,W / 2]) - settings.edgeOffset,
+        cutoutRadius = doughnutRadius * (settings.percentageInnerCutout / 100),
+        segmentTotal = 0;
+
+    //Draw base doughnut
+    var baseDoughnutRadius = doughnutRadius + settings.baseOffset,
+        baseCutoutRadius = cutoutRadius - settings.baseOffset;
+    $(document.createElementNS('http://www.w3.org/2000/svg', 'path'))
+      .attr({
+        "d": getHollowCirclePath(baseDoughnutRadius, baseCutoutRadius),
+        "fill": settings.baseColor
+      })
+      .appendTo($svg);
+
+    //Set up pie segments wrapper
+    var $pathGroup = $(document.createElementNS('http://www.w3.org/2000/svg', 'g'));
+    $pathGroup.attr({opacity: 0}).appendTo($svg);
+
+    //Set up tooltip
+    var $tip = $('<div class="' + settings.tipClass + '" />').appendTo('body').hide(),
+        tipW = $tip.width(),
+        tipH = $tip.height();
+
+    //Set up center text area
+    var summarySize = (cutoutRadius - (doughnutRadius - cutoutRadius)) * 2,
+        $summary = $('<div class="' + settings.summaryClass + '" />')
+                   .appendTo($this)
+                   .css({ 
+                     width: summarySize + "px",
+                     height: summarySize + "px",
+                     "margin-left": -(summarySize / 2) + "px",
+                     "margin-top": -(summarySize / 2) + "px"
+                   });
+    var $summaryTitle = $('<p class="' + settings.summaryTitleClass + '">' + settings.summaryTitle + '</p>').appendTo($summary);
+    var $summaryNumber = $('<p class="' + settings.summaryNumberClass + '"></p>').appendTo($summary).css({opacity: 0});
+
+    for (var i = 0, len = data.length; i < len; i++) {
+      segmentTotal += data[i].value;
+      $paths[i] = $(document.createElementNS('http://www.w3.org/2000/svg', 'path'))
+        .attr({
+          "stroke-width": settings.segmentStrokeWidth,
+          "stroke": settings.segmentStrokeColor,
+          "fill": data[i].color,
+          "data-order": i
+        })
+        .appendTo($pathGroup)
+        .on("mouseenter", pathMouseEnter)
+        .on("mouseleave", pathMouseLeave)
+        .on("mousemove", pathMouseMove);
+    }
+if(settings.forceTOTAL) {segmentPC = settings.forceTOTAL;textPC = '%'}
+else {segmentPC = segmentTotal;textPC = ''}
+    //Animation start
+    animationLoop(drawPieSegments);
+
+    //Functions
+    function getHollowCirclePath(doughnutRadius, cutoutRadius) {
+        //Calculate values for the path.
+        //We needn't calculate startRadius, segmentAngle and endRadius, because base doughnut doesn't animate.
+        var startRadius = -1.570,// -Math.PI/2
+            segmentAngle = 6.2831,// 1 * ((99.9999/100) * (PI*2)),
+            endRadius = 4.7131,// startRadius + segmentAngle
+            startX = centerX + cos(startRadius) * doughnutRadius,
+            startY = centerY + sin(startRadius) * doughnutRadius,
+            endX2 = centerX + cos(startRadius) * cutoutRadius,
+            endY2 = centerY + sin(startRadius) * cutoutRadius,
+            endX = centerX + cos(endRadius) * doughnutRadius,
+            endY = centerY + sin(endRadius) * doughnutRadius,
+            startX2 = centerX + cos(endRadius) * cutoutRadius,
+            startY2 = centerY + sin(endRadius) * cutoutRadius;
+        var cmd = [
+          'M', startX, startY,
+          'A', doughnutRadius, doughnutRadius, 0, 1, 1, endX, endY,//Draw outer circle
+          'Z',//Close path
+          'M', startX2, startY2,//Move pointer
+          'A', cutoutRadius, cutoutRadius, 0, 1, 0, endX2, endY2,//Draw inner circle
+          'Z'
+        ];
+        cmd = cmd.join(' ');
+        return cmd;
+    };
+    function pathMouseEnter(e) {
+      var order = $(this).data().order;
+     if($tip.text(data[order].title) != ''){
+		 
+	  	$tip.text(data[order].title).fadeIn(200);
+      	settings.onPathEnter.apply($(this),[e,data]);
+		 
+		 }
+    }
+    function pathMouseLeave(e) {
+      $tip.hide();
+      settings.onPathLeave.apply($(this),[e,data]);
+    }
+    function pathMouseMove(e) {
+      $tip.css({
+        top: e.pageY + settings.tipOffsetY,
+        left: e.pageX - $tip.width() / 2 + settings.tipOffsetX
+      });
+    }
+    function drawPieSegments (animationDecimal) {
+      var startRadius = -PI / 2,//-90 degree
+          rotateAnimation = 1;
+      if (settings.animation && settings.animateRotate) rotateAnimation = animationDecimal;//count up between0~1
+
+      drawDoughnutText(animationDecimal, segmentTotal);
+
+      $pathGroup.attr("opacity", animationDecimal);
+
+      //If data have only one value, we draw hollow circle(#1).
+      if (data.length === 1 && (4.7122 < (rotateAnimation * ((data[0].value / segmentTotal) * (PI * 2)) + startRadius))) {
+        $paths[0].attr("d", getHollowCirclePath(doughnutRadius, cutoutRadius));
+        return;
+      }
+      for (var i = 0, len = data.length; i < len; i++) {
+        var segmentAngle = rotateAnimation * ((data[i].value / segmentTotal) * (PI * 2)),
+            endRadius = startRadius + segmentAngle,
+            largeArc = ((endRadius - startRadius) % (PI * 2)) > PI ? 1 : 0,
+            startX = centerX + cos(startRadius) * doughnutRadius,
+            startY = centerY + sin(startRadius) * doughnutRadius,
+            endX2 = centerX + cos(startRadius) * cutoutRadius,
+            endY2 = centerY + sin(startRadius) * cutoutRadius,
+            endX = centerX + cos(endRadius) * doughnutRadius,
+            endY = centerY + sin(endRadius) * doughnutRadius,
+            startX2 = centerX + cos(endRadius) * cutoutRadius,
+            startY2 = centerY + sin(endRadius) * cutoutRadius;
+        var cmd = [
+          'M', startX, startY,//Move pointer
+          'A', doughnutRadius, doughnutRadius, 0, largeArc, 1, endX, endY,//Draw outer arc path
+          'L', startX2, startY2,//Draw line path(this line connects outer and innner arc paths)
+          'A', cutoutRadius, cutoutRadius, 0, largeArc, 0, endX2, endY2,//Draw inner arc path
+          'Z'//Cloth path
+        ];
+        $paths[i].attr("d", cmd.join(' '));
+        startRadius += segmentAngle;
+      }
+    }
+    function drawDoughnutText(animationDecimal, segmentTotal) {
+      $summaryNumber
+        .css({opacity: animationDecimal})
+        .text((segmentPC * animationDecimal).toFixed(0)+textPC);
+    }
+    function animateFrame(cnt, drawData) {
+      var easeAdjustedAnimationPercent =(settings.animation)? CapValue(easingFunction(cnt), null, 0) : 1;
+      drawData(easeAdjustedAnimationPercent);
+    }
+    function animationLoop(drawData) {
+      var animFrameAmount = (settings.animation)? 1 / CapValue(settings.animationSteps, Number.MAX_VALUE, 1) : 1,
+          cnt =(settings.animation)? 0 : 1;
+      requestAnimFrame(function() {
+          cnt += animFrameAmount;
+          animateFrame(cnt, drawData);
+          if (cnt <= 1) {
+            requestAnimFrame(arguments.callee);
+          } else {
+            settings.afterDrawed.call($this);
+          }
+      });
+    }
+    function Max(arr) {
+      return Math.max.apply(null, arr);
+    }
+    function Min(arr) {
+      return Math.min.apply(null, arr);
+    }
+    function isNumber(n) {
+      return !isNaN(parseFloat(n)) && isFinite(n);
+    }
+    function CapValue(valueToCap, maxValue, minValue) {
+      if (isNumber(maxValue) && valueToCap > maxValue) return maxValue;
+      if (isNumber(minValue) && valueToCap < minValue) return minValue;
+      return valueToCap;
+    }
+    return $this;
+  };
+})(jQuery);</script>
+
+						<div id="doughnutChart" class="chart"></div>
+            			<p class="price">Chiết khấu tháng trước: <strong><span class="curr">999 Kc</span></strong></p>
+            
+     
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="tips">Quý khách còn thiếu <strong class="curr">xxx kc</strong> nữa là được chiết khấu <strong>1%</strong> vào tháng sau.</div>
+					<!--  Nếu tổng tiền giao > 200.000kc
+					
+					
+					<div class="tips done">Chúc mừng quý khách đã được chiết khấu 1% trong tháng.</div>
+					
+					
+					-->
+				</div>
+				
+			</div>
+				
+			
+			
+			<script type="text/javascript">
+$(function()
+{
+	$(document).on('click', 'a.nav-page',function(event)
+	{
+		event.preventDefault();
+		a = $( event.target );
+		if(a.hasClass('btn-loading') === false)
+		{
+			a.addClass('btn-loading');
+			a.text('Loading...')
+			$.ajax({
+				url: a.attr('href'),
+				success:function(data)
+				{
+					a.parent().remove();
+					$("table.order-list > tbody").append(data);
+				}
+			});
+			
+		}
+	});
+	$(document).on('change','#order-filter input, #order-filter select',function(event){
+							$('#order-filter').trigger('submit')
+						});
+						$(document).on('submit', '#order-filter',function(event)
+						{
+							a = $( event.target );
+							event.preventDefault();
+							form_c = a.serializeArray();
+							loading = '<div class="loading-page"><div class="msg">Loading...</div></div>';
+							$pl_loading = $(loading);
+							$('#order-content').append($pl_loading);
+							loading_pos('#order-content');
+							$(window).scroll(function () {
+								loading_pos('#order-content');
+							});
+							$(window).resize(function () {
+								loading_pos('#order-content');
+							});
+							c = $.ajax({
+								url:a.attr('action'),
+								data:form_c,
+								type:'POST',
+								success: function(data){
+									$('#order-content').html(data);
+								}
+							});
+						});
+});
+</script>
+
+			<div class="block">
+			<div id="order-content">
+				<div class="ttitle">
+				<h1>Các đơn hàng trong tháng 1</h1></div>
+				<table class="order-list list">
+					<thead>
+						<tr>
+							<th class="n">ID</th>
+							<th>Trạng thái</th>
+							<th>Ngày đặt</th>
+							<th>Ngày giao</th>
+							<th class="price"><p>Tiền đặt</p><p class="real">Tiền giao</p></th>
+							<th>Đáp ứng</th>
+							<th class="address">Địa chỉ</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr id="invoice_1" class="completed"><!-- id của đơn hàng: invoice_[id] -->
+							<td class="n">#68</td>
+							<td class="status label"><p>Đã giao</p></td>
+							<td class="date">04/05/2015</td>
+							<td class="date">04/05/2015</td>
+							<td class="price">
+								<p>76,331.80 Kc</p>
+								<p class="real">76,331.80 Kc</p>
+							</td>
+							<td>30%</td>	
+							<td class="address">Libušská 319/126, Praha - Písnice</td>
+							<td class="btns"><a href="reorder.html" class="button">Re-Order</a>
+							<button class="show-detail" onClick="show_invoice(1)"></button></td>
+						</tr>
+						<tr class="ex" id="list_invoice_1"><!-- id của đơn hàng: list_invoice_[id] -->
+							<td colspan="8">
+								<table>
+									
+									<tbody>
+										<tr>
+											<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+											<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+											<td class="ean"><s class="icon ean"></s>2121212</td>
+											<td class="price_s">100 Kč</td>
+											<td class="qty">&times; 7</td>
+											<td class="price">700 Kč</td>
+										</tr>
+										<tr>
+											<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+											<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+											<td class="ean"><s class="icon ean"></s>2121212</td>
+											<td class="price_s">100 Kč</td>
+											<td class="qty">&times; 7</td>
+											<td class="price">700 Kč</td>
+										</tr>
+										<tr>
+											<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+											<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+											<td class="ean"><s class="icon ean"></s>2121212</td>
+											<td class="price_s">100 Kč</td>
+											<td class="qty">&times; 7</td>
+											<td class="price">700 Kč</td>
+										</tr>
+										<tr>
+											<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+											<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+											<td class="ean"><s class="icon ean"></s>2121212</td>
+											<td class="price_s">100 Kč</td>
+											<td class="qty">&times; 7</td>
+											<td class="price">700 Kč</td>
+										</tr>
+										<tr>
+											<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+											<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+											<td class="ean"><s class="icon ean"></s>2121212</td>
+											<td class="price_s">100 Kč</td>
+											<td class="qty">&times; 7</td>
+											<td class="price">700 Kč</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr class="spacer"><td colspan="8"></td></tr>
+						<tr id="invoice_2" class="waiting"><!-- id của đơn hàng: invoice_[id] -->
+							<td class="n">#68</td>
+							<td class="status label"><p>Chưa chuẩn bị</p></td>
+							<td class="date">04/05/2015</td>
+							<td class="date">04/05/2015</td>
+							<td class="price">
+								<p>76,331.80 Kc</p>
+								<p class="real">76,331.80 Kc</p>
+							</td>
+							<td>30%</td>	
+							<td class="address">Libušská 319/126, Praha - Písnice, Praha 4 14200</td>
+							<td class="btns"><a href="reorder.html" class="button">Re-Order</a>
+							<button class="show-detail" onClick="show_invoice(2)"></button></td>
+						</tr>
+						<tr class="ex" id="list_invoice_2"><!-- id của đơn hàng: list_invoice_[id] -->
+							<td colspan="8">
+								<table>
+									
+									<tbody>
+										<tr>
+											<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+											<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+											<td class="ean"><s class="icon ean"></s>2121212</td>
+											<td class="price_s">100 Kč</td>
+											<td class="qty">&times; 7</td>
+											<td class="price">700 Kč</td>
+										</tr>
+										<tr>
+											<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+											<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+											<td class="ean"><s class="icon ean"></s>2121212</td>
+											<td class="price_s">100 Kč</td>
+											<td class="qty">&times; 7</td>
+											<td class="price">700 Kč</td>
+										</tr>
+										<tr>
+											<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+											<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+											<td class="ean"><s class="icon ean"></s>2121212</td>
+											<td class="price_s">100 Kč</td>
+											<td class="qty">&times; 7</td>
+											<td class="price">700 Kč</td>
+										</tr>
+										<tr>
+											<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+											<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+											<td class="ean"><s class="icon ean"></s>2121212</td>
+											<td class="price_s">100 Kč</td>
+											<td class="qty">&times; 7</td>
+											<td class="price">700 Kč</td>
+										</tr>
+										<tr>
+											<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+											<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+											<td class="ean"><s class="icon ean"></s>2121212</td>
+											<td class="price_s">100 Kč</td>
+											<td class="qty">&times; 7</td>
+											<td class="price">700 Kč</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr class="spacer"><td colspan="8"></td></tr>
+						<tr id="invoice_3" class="pending"><!-- id của đơn hàng: invoice_[id] -->
+							<td class="n">#68</td>
+							<td class="status label"><p>Chưa xác nhận</p></td>
+							<td class="date">04/05/2015</td>
+							<td class="date">04/05/2015</td>
+							<td class="price">
+								<p>76,331.80 Kc</p>
+								<p class="real">76,331.80 Kc</p>
+							</td>
+							<td>30%</td>	
+							<td class="address">Libušská 319/126, Praha - Písnice, Praha 4 14200</td>
+							<td class="btns"><a href="reorder.html" class="button">Re-Order</a>
+							<button class="show-detail" onClick="show_invoice(3)"></button></td>
+						</tr>
+						<tr class="ex" id="list_invoice_3"><!-- id của đơn hàng: list_invoice_[id] -->
+							<td colspan="8">
+								<table>
+									
+									<tbody>
+										<tr>
+											<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+											<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+											<td class="ean"><s class="icon ean"></s>2121212</td>
+											<td class="price_s">100 Kč</td>
+											<td class="qty">&times; 7</td>
+											<td class="price">700 Kč</td>
+										</tr>
+										<tr>
+											<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+											<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+											<td class="ean"><s class="icon ean"></s>2121212</td>
+											<td class="price_s">100 Kč</td>
+											<td class="qty">&times; 7</td>
+											<td class="price">700 Kč</td>
+										</tr>
+										<tr>
+											<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+											<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+											<td class="ean"><s class="icon ean"></s>2121212</td>
+											<td class="price_s">100 Kč</td>
+											<td class="qty">&times; 7</td>
+											<td class="price">700 Kč</td>
+										</tr>
+										<tr>
+											<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+											<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+											<td class="ean"><s class="icon ean"></s>2121212</td>
+											<td class="price_s">100 Kč</td>
+											<td class="qty">&times; 7</td>
+											<td class="price">700 Kč</td>
+										</tr>
+										<tr>
+											<td class="thumb"><a href="product.html" title="Product 80541"><img src="http://dev.tamda.eu/image/cache/catalog/demo/macbook_3-228x228.jpg" alt="Product 81216"></a></td>
+											<td class="title"><a href="product.html" title="Product 80541">Product 80541</a></td>
+											<td class="ean"><s class="icon ean"></s>2121212</td>
+											<td class="price_s">100 Kč</td>
+											<td class="qty">&times; 7</td>
+											<td class="price">700 Kč</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+						
+					</tbody>
+				</table>
+				</div>
+			</div>	
+				
+			
+			
+			
+			
 		</div>
 		<div class="clear"></div>
 	</div>

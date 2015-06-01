@@ -370,7 +370,8 @@ function pos_cart()
 	$('#cart div.items').height(height + "px");
 	if (offset < top) {
 		a.addClass('fixed');
-		a.css('margin-right',-page_w/2);
+		
+		a.css('margin-left',$('#cart_pos').offset().left-$(document).scrollLeft());
 	} else {
 		a.removeClass('fixed');
 		a.css('margin-right',0);
