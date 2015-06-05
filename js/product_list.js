@@ -1,3 +1,30 @@
+function add2cart_all()
+{
+	if($('button.add2cart_all').hasClass('loading')===false)
+	{
+	$('button.add2cart_all').text('Loading...');
+	$('button.add2cart_all').addClass('loading');
+	var prd_arr = new Array();
+	$('#right ul.products li form').each(function(index, element) {
+		prd=
+		{
+			'id': $(this).find('input[name="product-id"]').val(),
+			'quantity': $(this).find('input[name="quantity"]').val(),
+		}
+		prd_arr.push(prd);
+	});
+	$.ajax({url: 'demo/reorder.html', type:'POST',
+		data:{id:prd_arr},
+		success: function(data)
+		{
+			$('button.add2cart_all').removeClass('loading');
+			$('button.add2cart_all').text('Đã thêm vào giỏ hàng');
+			$('#temp').append(data);
+			
+		}
+	})
+	}
+}
 function loading_list(url,data)
 {
 	if($('#content-product .loading-page').length == 0)
@@ -76,6 +103,33 @@ function filter_h()
 	});
 	}
 }
+function pager_pos()
+{
+	if($('#loader-more').length)
+	{
+		var a = $('#loader-more');
+		var top = $(document).scrollTop();
+		var view = $(window).height();
+		var p_top = $('#loader-more').offset().top;
+		if($(document).scrollTop()+$(window).height() > p_top)
+		{
+			if(a.hasClass('loading') === false)
+			{
+				a.addClass('loading');
+				a.html('<span>Loading...</span>')
+				$.ajax(
+				{
+					url:a.attr('data-href'),
+					success: function(data)
+					{
+						a.remove();
+						$("#content-product").append(data);
+					}
+				})
+			}
+		}
+	}
+}
 function filter_pos()
 {
 	if($('#l-filter').length)
@@ -88,7 +142,7 @@ function filter_pos()
 	a = $('#l-filter');
 	footer = $('#footer').height();
 	page_w = $('#header .wrap').width();
-	var view = $(window).height();
+	var view = $(window).height()+10;
 	var bodyHeight = $('body').height();
 	var page = $(document).height();
 	var top = $(document).scrollTop();
@@ -177,6 +231,12 @@ jQuery(function($){
 								}
 						})
 					});
+	$(document).on('click', '.list_footer.pager a.loaded',function(event)
+	{
+		event.preventDefault();
+		a = $( event.target );
+		$.scrollTo('ul#page-'+a.attr('data-page'),400);
+	});
 	$(document).on('click', 'a.nav-page',function(event)
 	{
 		event.preventDefault();
@@ -250,12 +310,15 @@ jQuery(function($){
 		});
 	filter_pos();
 	filter_h();
+	pager_pos();
 	$(window).scroll(function () {
 		filter_pos();
+		pager_pos();
 	});
 	$(window).resize(function () {
 		filter_pos();
 		filter_h();
+		pager_pos();
 	});
 	
 });

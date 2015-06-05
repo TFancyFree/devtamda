@@ -134,8 +134,14 @@ function check_quantity(obj,check)
   	var max = parseFloat(obj.attr('data-max-amount'));
   	if(!max) max = 0;
   	var oldValue = obj.val();
+	
   	var check_valid = oldValue/step;
-	if(oldValue > max && max !=0)
+	if(isInt(oldValue)===false)
+	{
+		inline_error(obj, 'Bạn phải nhập số'); 
+		obj.val(min);
+	}
+	else if(oldValue > max && max !=0)
 	{
 		inline_error(obj, 'Bạn chỉ được chọn số lượng tối đa là '+ max);  
 		if(check == 0 ) obj.val(max);
@@ -390,7 +396,7 @@ function close_ntf()
 	$('body').removeClass('show-ntf');
 	$('body').animate({marginTop:0},500);
 }
-function show_ntf(data)
+function show_ntf(data,time)
 {
 	clearTimeout(ntf_time);
 	$('#notification-msg').html(data);
@@ -398,7 +404,15 @@ function show_ntf(data)
 	$('body').addClass('show-ntf');
 	$('#notification').css('margin-bottom',-msg_h);
 	$('body').animate({marginTop:msg_h},500);
-	ntf_time = setTimeout(function(){close_ntf()},5000)
+	if(time==0){ }
+	else if((isInt(time)===true))ntf_time = setTimeout(function(){close_ntf()},time);
+	else ntf_time = setTimeout(function(){close_ntf()},5000);
+}
+function show_scr_t()
+{
+	var top = $(document).scrollTop();
+	if(top > 50) $('#scrollTop').addClass('show')
+	else $('#scrollTop').removeClass('show')
 }
 jQuery(function($){
 	
@@ -428,9 +442,10 @@ jQuery(function($){
 	
 	$('#user-area').mouseenter(function(){$(this).addClass('hover')}).mouseleave(function(){$(this).removeClass('hover')});
 	pos_cart();
-	
+	show_scr_t();
 	$(window).scroll(function () {
 		pos_cart();
+		show_scr_t();
 	});
 	$(window).resize(function () {
 		pos_cart();
